@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klan Yönetimi - Harita Veto & Kura</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Admin Controls -->
+        <div class="admin-controls">
+            <div id="admin-status" class="admin-status hidden">
+                <span class="admin-badge">Admin</span>
+                <div class="edit-toggle">
+                    <label for="edit-mode">Düzenleme</label>
+                    <input type="checkbox" id="edit-mode" class="switch">
+                </div>
+                <button id="logout-btn" class="btn btn-destructive">Çıkış</button>
+            </div>
+            <button id="login-btn" class="btn btn-secondary">
+                <span class="icon">🔑</span> Admin Giriş
+            </button>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="main-title">LORDASTONG S2 SON SİLAH KLAN SİSTEMİ</h1>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <div class="tab-list">
+                    <button class="tab-trigger active" data-tab="viewer">Görüntüle</button>
+                    <button class="tab-trigger" data-tab="veto">Veto & Kura</button>
+                    <button class="tab-trigger" data-tab="admin" id="admin-tab" disabled>Admin</button>
+                </div>
+
+                <!-- Viewer Tab -->
+                <div class="tab-content active" id="viewer-tab">
+                    <div class="tab-section">
+                        <!-- Rankings -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">👑 Sıralama</h2>
+                            </div>
+                            <div class="card-content">
+                                <div id="rankings-list" class="rankings-list"></div>
+                            </div>
+                        </div>
+
+                        <!-- Clan Gallery -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">👥 Klanlar</h2>
+                            </div>
+                            <div class="card-content">
+                                <div id="clan-gallery" class="clan-gallery"></div>
+                            </div>
+                        </div>
+
+                        <!-- Info Box -->
+                        <div class="alert alert-info">
+                            <h3>Bilgi</h3>
+                            <p>BURAYA İSTEDİĞİMİZ DUYURULARI YAZACAĞIZ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Veto Tab -->
+                <div class="tab-content" id="veto-tab">
+                    <div class="veto-container">
+                        <div class="veto-main">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2 class="card-title">Adım Adım — Harita Veto & Kura</h2>
+                                </div>
+                                <div class="card-content">
+                                    <!-- Team Selection -->
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="team-a">Takım A</label>
+                                            <select id="team-a" class="select">
+                                                <option value="">Seç</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="team-b">Takım B</label>
+                                            <select id="team-b" class="select">
+                                                <option value="">Seç</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Mode and First Ban -->
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="game-mode">Mod</label>
+                                            <select id="game-mode" class="select">
+                                                <option value="BIÇAK">BIÇAK</option>
+                                                <option value="TABANCA">TABANCA</option>
+                                                <option value="GENEL">GENEL</option>
+                                                <option value="DÜRBÜN">DÜRBÜN</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <button id="draw-first-ban" class="btn btn-primary full-width" disabled>
+                                                🎲 Kura: İlk Banlayacak Takım
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- First Ban Result -->
+                                    <div id="first-ban-result" class="alert alert-success hidden">
+                                        <h3>İlk Ban</h3>
+                                        <p>Kura sonucu: <strong id="first-ban-team"></strong> ilk banı yapacak.</p>
+                                    </div>
+
+                                    <div class="separator"></div>
+
+                                    <!-- Maps -->
+                                    <div class="form-group">
+                                        <label>Haritalar</label>
+                                        <div id="maps-grid" class="maps-grid"></div>
+                                    </div>
+
+                                    <!-- Final Map Selection -->
+                                    <div id="final-map-section" class="hidden">
+                                        <div class="alert alert-success">
+                                            <h3>Harita Belirlendi</h3>
+                                            <p>Oynanacak harita: <strong id="final-map-name"></strong></p>
+                                        </div>
+                                        <div class="form-grid">
+                                            <button id="draw-side-picker" class="btn btn-primary">
+                                                🎲 Kura: Taraf Seçecek Takım
+                                            </button>
+                                            <select id="side-choice" class="select">
+                                                <option value="">Saldırı / Savunma</option>
+                                                <option value="Saldırı">Saldırı</option>
+                                                <option value="Savunma">Savunma</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Match Summary -->
+                                    <div id="match-summary-section" class="hidden">
+                                        <div class="separator"></div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">📋 Kopyala — Discord Duyurusu</h3>
+                                            </div>
+                                            <div class="card-content">
+                                                <textarea id="match-summary" class="textarea" readonly rows="8"></textarea>
+                                                <div class="button-group">
+                                                    <button id="copy-summary" class="btn btn-primary">
+                                                        📋 Kopyala
+                                                    </button>
+                                                    <button id="reset-veto" class="btn btn-secondary">Sıfırla</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Match Result -->
+                                        <div class="form-group">
+                                            <label>Maç Sonucu</label>
+                                            <div class="button-group">
+                                                <button id="team-a-wins" class="btn btn-secondary">Takım A Kazandı (+3)</button>
+                                                <button id="team-b-wins" class="btn btn-secondary">Takım B Kazandı (+3)</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="alert alert-warning">
+                                            <h3>Hızlı Puan Bilgisi</h3>
+                                            <p>Kazanan klana <strong>+3 puan</strong> eklenir. Kaybedene işlem yapılmaz. Bu demo akışında doğrudan puan yazmıyoruz; Admin → Klanlar bölümünde ilgili klanın puanını düzenleyebilirsiniz.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Veto Status -->
+                        <div class="veto-status">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Durum</h3>
+                                </div>
+                                <div class="card-content">
+                                    <div class="status-list">
+                                        <div class="status-item">
+                                            <span>Takım A</span>
+                                            <span id="status-team-a">-</span>
+                                        </div>
+                                        <div class="status-item">
+                                            <span>Takım B</span>
+                                            <span id="status-team-b">-</span>
+                                        </div>
+                                        <div class="status-item">
+                                            <span>Mod</span>
+                                            <span id="status-mode">BIÇAK</span>
+                                        </div>
+                                        <div class="status-item">
+                                            <span>İlk Ban</span>
+                                            <span id="status-first-ban">-</span>
+                                        </div>
+                                        <div class="status-item">
+                                            <span>Banlanan</span>
+                                            <span id="status-banned">-</span>
+                                        </div>
+                                        <div class="status-item">
+                                            <span>Harita</span>
+                                            <span id="status-map">-</span>
+                                        </div>
+                                        <div class="status-item">
+                                            <span>Taraf Kurası</span>
+                                            <span id="status-side-picker">-</span>
+                                        </div>
+                                        <div class="status-item">
+                                            <span>Seçilen Taraf</span>
+                                            <span id="status-side">-</span>
+                                        </div>
+                                    </div>
+                                    <div class="separator"></div>
+                                    <div class="progress-section">
+                                        <div class="progress-label">İlerleme</div>
+                                        <div class="progress-bar">
+                                            <div id="progress-fill" class="progress-fill"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Tab -->
+                <div class="tab-content" id="admin-tab-content">
+                    <div class="tab-section">
+                        <!-- Admin Tips -->
+                        <div class="alert alert-info">
+                            <h3>Admin Paneli</h3>
+                            <div class="admin-tips">
+                                <div>• Klan ekle/sil, logo ve oyuncu listesi düzenle.</div>
+                                <div>• Harita galerisine görsel yükle, aktif/pasif yap.</div>
+                                <div>• Mod listesini düzenle.</div>
+                                <div>• Veto & Kura sekmesinde maç sonuçlarını işleyip kazanana <strong>+3</strong> puan ekle.</div>
+                                <div>• Kalıcılık için <strong>JSON Dışa Aktar</strong> ile yedekle, gerekirse <strong>İçe Aktar</strong>.</div>
+                            </div>
+                        </div>
+
+                        <!-- Clans Management -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">👥 Klanlar</h2>
+                            </div>
+                            <div class="card-content">
+                                <div id="admin-controls-clans" class="admin-controls-section hidden">
+                                    <div class="button-group">
+                                        <button id="add-clan" class="btn btn-primary">➕ Klan Ekle</button>
+                                        <button id="export-data" class="btn btn-secondary">📤 Dışa Aktar (JSON)</button>
+                                        <button id="import-data" class="btn btn-secondary">📥 İçe Aktar</button>
+                                        <input type="file" id="import-file" accept="application/json" hidden>
+                                    </div>
+                                </div>
+                                <div id="admin-clan-gallery" class="clan-gallery"></div>
+                            </div>
+                        </div>
+
+                        <!-- Maps Management -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">🗺️ Haritalar</h2>
+                            </div>
+                            <div class="card-content">
+                                <div id="admin-controls-maps" class="admin-controls-section hidden">
+                                    <button id="add-map" class="btn btn-primary">➕ Harita Ekle</button>
+                                </div>
+                                <div id="admin-map-gallery" class="maps-gallery"></div>
+                            </div>
+                        </div>
+
+                        <!-- Mods Management -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Modlar</h2>
+                            </div>
+                            <div class="card-content">
+                                <div id="mod-list" class="mod-list"></div>
+                                <div id="admin-controls-mods" class="admin-controls-section hidden">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="text" id="new-mod" placeholder="Mod ekle (örn. BO1)" class="input">
+                                            <button id="add-mod" class="btn btn-primary">Ekle</button>
+                                            <button id="clear-mods" class="btn btn-secondary">Temizle</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Admin Girişi</h3>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>İÇERİK DÜZENLEYEBİLİRSİN<strong>S2 SON SİLAH</strong>LORDASTONG <strong>♥</strong></p>
+                <div class="form-group">
+                    <label for="login-nickname">Nickname</label>
+                    <input type="text" id="login-nickname" placeholder="gitgit" class="input">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Şifre</label>
+                    <input type="password" id="login-password" placeholder="••••••••" class="input">
+                </div>
+                <button id="login-submit" class="btn btn-primary full-width">Giriş Yap</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Clan Modal -->
+    <div id="edit-clan-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Klan Düzenle</h3>
+                <button class="close-btn" onclick="closeEditClanModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="edit-clan-name">Klan Adı</label>
+                    <input type="text" id="edit-clan-name" class="input">
+                </div>
+                <div class="form-group">
+                    <label for="edit-clan-logo">Logo</label>
+                    <input type="file" id="edit-clan-logo" accept="image/*" class="input">
+                </div>
+                <div class="form-group">
+                    <label for="edit-clan-points">Puan</label>
+                    <input type="number" id="edit-clan-points" class="input" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Oyuncular</label>
+                    <div class="player-editor">
+                        <div id="edit-clan-players" class="player-list"></div>
+                        <div class="input-group">
+                            <input type="text" id="new-player" placeholder="Oyuncu ekle" class="input">
+                            <button onclick="addPlayer()" class="btn btn-primary">Ekle</button>
+                            <button onclick="clearPlayers()" class="btn btn-secondary">Temizle</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button onclick="saveClan()" class="btn btn-primary">Kaydet</button>
+                    <button onclick="closeEditClanModal()" class="btn btn-secondary">İptal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Map Modal -->
+    <div id="edit-map-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Harita Düzenle</h3>
+                <button class="close-btn" onclick="closeEditMapModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="edit-map-name">Harita Adı</label>
+                    <input type="text" id="edit-map-name" class="input">
+                </div>
+                <div class="form-group">
+                    <label for="edit-map-image">Görsel</label>
+                    <input type="file" id="edit-map-image" accept="image/*" class="input">
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="edit-map-active"> Aktif
+                    </label>
+                </div>
+                <div class="button-group">
+                    <button onclick="saveMap()" class="btn btn-primary">Kaydet</button>
+                    <button onclick="closeEditMapModal()" class="btn btn-secondary">İptal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+<script src="script.js"></script>
+</html>
