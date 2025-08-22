@@ -301,8 +301,19 @@ label {
 
 .alert-info {
     background: rgba(59, 130, 246, 0.1);
-    border-color: rgba(59, 130, 246, 0.3);
-    color: #93c5fd;
+    border: 1px solid rgba(59, 130, 246, 0.3); /* Explicit border for clarity */
+    color: #fdfdfd;
+    padding: 15px; /* Adds space inside the container */
+    margin: 0 auto; /* Centers the container horizontally */
+    display: inline-block; /* Makes the container shrink-wrap to content */
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+.alert-info h3 {
+    text-align: center; /* Centers the heading text */
+    font-size: 1.8rem; /* Larger font size (adjust as needed) */
+    font-weight: bold; /* Makes the heading bolder for prominence */
+    margin: 0 0 15px 0; /* Adds space below the heading, removes default margins */
+    color: #ff5757; /* Optional: brighter color for prominence (adjust as needed) */
 }
 
 .alert-success {
@@ -348,8 +359,8 @@ label {
 }
 
 .logo-circle {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 7.5rem;
+    height: 7.5rem;
     border-radius: 50%;
     background: linear-gradient(135deg, #374151, #1f2937);
     display: flex;
@@ -759,6 +770,9 @@ label {
     justify-content: center;
     border-radius: 0.375rem;
 }
+
+
+
 
 .close-btn:hover {
     background: rgba(239, 68, 68, 0.2);
