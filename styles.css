@@ -175,7 +175,22 @@ body {
 
 .card-header {
     padding: 1.5rem 1.5rem 0;
+    display: flex;               /* Flexbox aç */
+    justify-content: center;     /* Yatayda ortala */
+    align-items: center;         /* Dikeyde ortala */
+    margin-bottom: 2rem;         /* Alt boşluk */
 }
+
+.card-header h2 {
+    font-size: 50px;            /* Başlık boyutu */
+    font-weight: bold;           /* Kalın yazı */
+    color: #fff;                 /* Beyaz renk */
+    text-align: center;          /* Ortala */
+}
+
+
+
+
 
 .card-title {
     font-size: 1.25rem;
@@ -304,9 +319,10 @@ label {
     margin-bottom: 0.5rem;
 }
 
+
 .alert-info {
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.3); /* Explicit border for clarity */
+    background: rgba(4, 4, 44, 0.596);
+    border: 1px solid rgba(59, 131, 246, 0.24); /* Explicit border for clarity */
     color: #fdfdfd;
     padding: 15px; /* Adds space inside the container */
     margin: 0 auto; /* Centers the container horizontally */
@@ -320,6 +336,17 @@ label {
     margin: 0 0 15px 0; /* Adds space below the heading, removes default margins */
     color: #ff5757; /* Optional: brighter color for prominence (adjust as needed) */
 }
+
+
+#haberler-tab .alert-info {
+    display: flex;
+    flex-direction: column;      /* İçerikleri dikey sırala */
+    justify-content: center;     /* Dikey ortala */
+    align-items: center;         /* Yatay ortala */
+    text-align: center;          /* Metin ortala */
+    gap: 0.5rem;                   /* Paragraflar arası boşluk */
+}
+
 
 .alert-success {
     background: rgba(16, 185, 129, 0.1);
@@ -351,9 +378,17 @@ label {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background: rgba(39, 39, 42, 0.4);
+    background: rgba(39, 39, 42, 0.507);
     border-radius: 0.75rem;
     padding: 0.75rem;
+}
+
+
+.ranking-item:hover {
+    background: rgb(63, 63, 70); /* Daha belirgin arka plan */
+    border: 1px solid #3b82f6; /* Mavi çerçeve */
+    transform: translateY(-4px); /* Hafif yukarı kalkma */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Gölge */
 }
 
 .ranking-position {
@@ -421,6 +456,14 @@ label {
     border: 1px solid #3f3f46;
     border-radius: 0.75rem;
     padding: 1rem;
+}
+
+
+.clan-card:hover {
+    background: rgba(63, 63, 70, 0.8); /* Biraz daha parlak arka plan */
+    border-color: #3b82f6; /* Mavi border */
+    transform: translateY(-5px); /* Hafif yukarı kalksın */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Gölge efekti */
 }
 
 .clan-header {
@@ -801,6 +844,7 @@ label {
 .icon {
     font-size: 1rem;
 }
+
 
 /* Responsive */
 @media (max-width: 768px) {
