@@ -126,9 +126,10 @@ body {
 }
 
 .tab-trigger {
+    background: rgba(63, 63, 70, 0.8); /* Biraz daha parlak arka plan */
     background: transparent;
     border: none;
-    color: #a1a1aa;
+    color: #4c4c4d;
     padding: 0.75rem 1rem;
     border-radius: 0.375rem;
     cursor: pointer;
@@ -138,12 +139,16 @@ body {
 }
 
 .tab-trigger:hover:not(:disabled) {
-    color: #f4f4f5;
+    background: rgba(63, 63, 70, 0.8); /* Biraz daha parlak arka plan */
+    border-color: #3b82f6; /* Mavi border */
+    transform: translateY(-5px); /* Hafif yukarı kalksın */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Gölge efekti */
+    color: #ffffff
 }
 
 .tab-trigger.active {
     background: #27272a;
-    color: #f4f4f5;
+    color: #ffffff;
 }
 
 .tab-trigger:disabled {
@@ -475,6 +480,7 @@ label {
     transform: translateY(-5px); /* Hafif yukarı kalksın */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Gölge efekti */
 }
+
 
 .clan-header {
     display: flex;
