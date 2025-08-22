@@ -11,6 +11,11 @@ body {
     color: #f4f4f5;
     line-height: 1.6;
     min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://i.imgur.com/T9ygTgk.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .app {
@@ -799,6 +804,12 @@ label {
 
 /* Responsive */
 @media (max-width: 768px) {
+    body {
+        background-image: url('https://i.imgur.com/T9ygTgk.jpeg');
+        background-attachment: scroll; /* Mobilde fixed yerine scroll */
+        background-size: contain;
+    }
+
     .app {
         padding: 0.5rem;
     }
