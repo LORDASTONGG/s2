@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S2 SON SİLAH - D187</title>
+    <title>S2 SON SİLAH E-SPOR</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -265,7 +265,6 @@
                                     <div class="button-group">
                                         <button id="add-clan" class="btn btn-primary">➕ Klan Ekle</button>
                                         <button id="export-data" class="btn btn-secondary">📤 Dışa Aktar (JSON)</button>
-                                        <button id="import-data" class="btn btn-secondary">📥 İçe Aktar</button>
                                         <input type="file" id="import-file" accept="application/json" hidden>
                                     </div>
                                 </div>
@@ -436,7 +435,43 @@
 
 
 
+<script>
+        // Sayfa yüklendiğinde gerekli ayarları yap
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sağ tık menüsünü devre dışı bırak
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
 
+            // Geliştirici araçları kısayollarını engelleme
+            document.addEventListener('keydown', function(e) {
+                // F11 (tam ekran)
+                if (e.key === 'F11') {
+                    e.preventDefault();
+                    return false;
+                }
+
+                // F12 (geliştirici araçları)
+                if (e.key === 'F12') {
+                    e.preventDefault();
+                    return false;
+                }
+
+                // Ctrl+Shift+I (geliştirici araçları)
+                if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+                    e.preventDefault();
+                    return false;
+                }
+
+                // Ctrl+U (kaynak kodu görüntüle)
+                if (e.ctrlKey && e.key === 'u') {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        });
+    </script>
 
 
 
