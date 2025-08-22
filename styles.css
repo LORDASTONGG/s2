@@ -321,8 +321,8 @@ label {
 
 
 .alert-info {
-    background: rgba(4, 4, 44, 0.596);
-    border: 1px solid rgba(59, 131, 246, 0.24); /* Explicit border for clarity */
+    background: rgba(32, 32, 32, 0.596);
+    border: 1px solid rgba(8, 8, 8, 0.884); /* Explicit border for clarity */
     color: #fdfdfd;
     padding: 15px; /* Adds space inside the container */
     margin: 0 auto; /* Centers the container horizontally */
@@ -339,6 +339,16 @@ label {
 
 
 #haberler-tab .alert-info {
+    display: flex;
+    flex-direction: column;      /* İçerikleri dikey sırala */
+    justify-content: center;     /* Dikey ortala */
+    align-items: center;         /* Yatay ortala */
+    text-align: center;          /* Metin ortala */
+    gap: 0.5rem;                   /* Paragraflar arası boşluk */
+}
+
+
+#anasayfa-tab .alert-info {
     display: flex;
     flex-direction: column;      /* İçerikleri dikey sırala */
     justify-content: center;     /* Dikey ortala */
