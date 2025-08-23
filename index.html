@@ -7,50 +7,69 @@
     <title>S2 SON SİLAH - D187</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="app">
-        <!-- Admin Controls -->
-        <div class="admin-controls">
-            <!-- Sosyal medya butonları başlangıç -->
-            <a href="https://www.instagram.com/agitt.pmkcu/" target="_blank" class="btn btn-secondary btn-icon"
-                title="Instagram" style="font-size:1.5rem; margin-right:10px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
-                    style="width:1.5em; height:1.5em; vertical-align:middle;">
-            </a>
-
-            <a href="https://tiktok.com/@YOUR_TIKTOK" target="_blank" class="btn btn-secondary btn-icon" title="TikTok"
-                style="font-size:1.5rem; margin-right:10px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Tiktok_icon.svg" alt="TikTok"
-                    style="width:1.5em; height:1.5em; vertical-align:middle">
-            </a>
-
-            <a href="https://www.youtube.com/@S2SonSilahPServer" target="_blank" class="btn btn-secondary btn-icon"
-                title="YouTube" style="font-size:1.5rem;">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/YouTube%20icon%20(2013-2017).png"
-                    alt="YouTube" style="width:1.5em; height:1.2em; vertical-align:middle;">
-            </a>
-            <!-- Sosyal medya butonları bitiş -->
-
-            <div id="admin-status" class="admin-status hidden">
-                <span class="admin-badge">Admin</span>
-                <div class="edit-toggle">
-                    <label for="edit-mode">Düzenleme</label>
-                    <input type="checkbox" id="edit-mode" class="switch">
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="logo-section">
+                    <img src="https://i.imgur.com/n6DJpiE.png" alt="S2 Son Silah" class="header-logo">
+                    <div class="logo-text">
+                        <h1 class="site-title">S2SONSİLAH</h1>
+                        <span class="site-subtitle">ARENA D187</span>
+                    </div>
                 </div>
-                <button id="logout-btn" class="btn btn-destructive">Çıkış</button>
             </div>
-            <button id="login-btn" class="btn btn-secondary">
-                <span class="icon">🔑</span> Admin Giriş
-            </button>
-        </div>
+            
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li><a href="#anasayfa" class="nav-link active" data-tab="anasayfa">Ana Sayfa</a></li>
+                    <li><a href="#siralama" class="nav-link" data-tab="viewer">Sıralama</a></li>
+                    <li><a href="#mac" class="nav-link" data-tab="veto">Maç Oluştur</a></li>
+                    <li><a href="#haberler" class="nav-link" data-tab="haberler">Haberler</a></li>
+                    <li><a href="#admin" class="nav-link" data-tab="admin" id="admin-nav-link" disabled>Admin</a></li>
+                </ul>
+            </nav>
 
+            <div class="header-right">
+                <!-- Social Media Buttons -->
+                <div class="social-buttons">
+                    <a href="https://www.instagram.com/agitt.pmkcu/" target="_blank" class="social-btn instagram" title="Instagram">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                    </a>
+                    <a href="https://tiktok.com/@YOUR_TIKTOK" target="_blank" class="social-btn tiktok" title="TikTok">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Tiktok_icon.svg" alt="TikTok">
+                    </a>
+                    <a href="https://www.youtube.com/@S2SonSilahPServer" target="_blank" class="social-btn youtube" title="YouTube">
+                        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/YouTube%20icon%20(2013-2017).png" alt="YouTube">
+                    </a>
+                </div>
+
+                <!-- Admin Controls -->
+                <div class="admin-controls">
+                    <div id="admin-status" class="admin-status hidden">
+                        <span class="admin-badge">Admin</span>
+                        <div class="edit-toggle">
+                            <label for="edit-mode">Düzenleme</label>
+                            <input type="checkbox" id="edit-mode" class="switch">
+                        </div>
+                        <button id="logout-btn" class="btn btn-destructive">Çıkış</button>
+                    </div>
+                    <button id="login-btn" class="btn btn-secondary">
+                        <span class="icon">🔑</span> Admin
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="app">
         <!-- Main Content -->
         <main class="main-content">
-            <img src="https://i.imgur.com/n6DJpiE.png" alt="Turnuva"
-                style="width:220px; height:auto; border-radius:220px; display:block; margin:0 auto; margin-bottom:40px;">
-
 
             <!-- Tabs -->
             <div class="tabs">
@@ -68,9 +87,9 @@
                         <div class="alert alert-info">
                             <h3>✨DUYURULAR✨</h3>
                             <p>🔥YENİ TURNUVA ZAMANI : BELİRSİZ BELİRLENECEK</p>
-                            <p>📰 Haberler kanalı eklenmiştir güncel duyuruları takip edebileceğiniz bir kategoridir.
-                            </p>
+                            <p>📰 Haberler kanalı eklenmiştir güncel duyuruları takip edebileceğiniz bir kategoridir.</p>
                         </div>
+                        
                         <!-- Rankings -->
                         <div class="card">
                             <div class="card-header">
@@ -94,8 +113,7 @@
                         <!-- Info Box -->
                         <div class="alert alert-info">
                             <h3>Bilgi</h3>
-                            <p>Bu site s2 son silah için klan turnuvalarına özel olarak hazırlanmıştır en iyi sıralama
-                                kimin ise özel ödülleri olacaktır.</p>
+                            <p>Bu site s2 son silah için klan turnuvalarına özel olarak hazırlanmıştır en iyi sıralama kimin ise özel ödülleri olacaktır.</p>
                         </div>
                     </div>
                 </div>
@@ -183,8 +201,7 @@
                                                 <h3 class="card-title">📋 Kopyala — Discord Duyurusu</h3>
                                             </div>
                                             <div class="card-content">
-                                                <textarea id="match-summary" class="textarea" readonly
-                                                    rows="8"></textarea>
+                                                <textarea id="match-summary" class="textarea" readonly rows="8"></textarea>
                                                 <div class="button-group">
                                                     <button id="copy-summary" class="btn btn-primary">
                                                         📋 Kopyala
@@ -198,18 +215,14 @@
                                         <div class="form-group">
                                             <label>Maç Sonucu</label>
                                             <div class="button-group">
-                                                <button id="team-a-wins" class="btn btn-secondary">Takım A Kazandı
-                                                    (+3)</button>
-                                                <button id="team-b-wins" class="btn btn-secondary">Takım B Kazandı
-                                                    (+3)</button>
+                                                <button id="team-a-wins" class="btn btn-secondary">Takım A Kazandı (+3)</button>
+                                                <button id="team-b-wins" class="btn btn-secondary">Takım B Kazandı (+3)</button>
                                             </div>
                                         </div>
 
                                         <div class="alert alert-warning">
                                             <h3>Hızlı Puan Bilgisi</h3>
-                                            <p>Kazanan klana <strong>+3 puan</strong> eklenir. Kaybedene işlem yapılmaz.
-                                                Bu demo akışında doğrudan puan yazmıyoruz; Admin → Klanlar bölümünde
-                                                ilgili klanın puanını düzenleyebilirsiniz.</p>
+                                            <p>Kazanan klana <strong>+3 puan</strong> eklenir. Kaybedene işlem yapılmaz. Bu demo akışında doğrudan puan yazmıyoruz; Admin → Klanlar bölümünde ilgili klanın puanını düzenleyebilirsiniz.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -280,11 +293,8 @@
                                 <div>• Klan ekle/sil, logo ve oyuncu listesi düzenle.</div>
                                 <div>• Harita galerisine görsel yükle, aktif/pasif yap.</div>
                                 <div>• Mod listesini düzenle.</div>
-                                <div>• Veto & Kura sekmesinde maç sonuçlarını işleyip kazanana <strong>+3</strong> puan
-                                    ekle.</div>
-                                <div>• Kalıcılık için <strong>JSON Dışa Aktar</strong> ile yedekle, gerekirse
-                                    <strong>İçe Aktar</strong>.
-                                </div>
+                                <div>• Veto & Kura sekmesinde maç sonuçlarını işleyip kazanana <strong>+3</strong> puan ekle.</div>
+                                <div>• Kalıcılık için <strong>JSON Dışa Aktar</strong> ile yedekle, gerekirse <strong>İçe Aktar</strong>.</div>
                             </div>
                         </div>
 
@@ -303,6 +313,7 @@
                                 <div id="admin-clan-gallery" class="clan-gallery"></div>
                             </div>
                         </div>
+                        
                         <div class="alert alert-info">
                             <h3>ÖNEMLİ</h3>
                             <p>GÜNCELLEME YAPTIKTAN SONRA DIŞARI AKTAR DİYİP GELEN DOSYAYI LORDASTONGA VERİNİZ</p>
@@ -332,8 +343,7 @@
                                 <div id="admin-controls-mods" class="admin-controls-section hidden">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <input type="text" id="new-mod" placeholder="Mod ekle (örn. BO1)"
-                                                class="input">
+                                            <input type="text" id="new-mod" placeholder="Mod ekle (örn. BO1)" class="input">
                                             <button id="add-mod" class="btn btn-primary">Ekle</button>
                                             <button id="clear-mods" class="btn btn-secondary">Temizle</button>
                                         </div>
@@ -343,318 +353,251 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Haberler Tab -->
-                <!-- Haberler Tab - Yepyeni, farklı ve modern bir tasarım -->
-                <div class="tab-content" id="haberler-tab" style="padding:0;">
+                <div class="tab-content" id="haberler-tab">
                     <!-- Üstte büyük bir başlık ve kısa açıklama -->
-                    <section
-                        style="background:linear-gradient(120deg,#1e293b 60%,#0ea5e9 100%); border-radius:32px; box-shadow:0 8px 40px #0008; padding:48px 24px 32px 24px; margin-bottom:40px; display:flex; flex-wrap:wrap; align-items:center; gap:32px;">
-                        <div style="flex:2; min-width:260px;">
-                            <h1
-                                style="font-size:2.8rem; font-weight:900; color:#fff; margin-bottom:18px; letter-spacing:2px; text-shadow:0 2px 16px #000a;">
-                                <span style="color:#38bdf8;">⚡ GÜNCEL HABERLER</span> <br> S2 SON SİLAH ARENASI
+                    <section class="news-hero">
+                        <div class="news-hero-content">
+                            <h1 class="news-hero-title">
+                                <span class="news-accent">⚡ GÜNCEL HABERLER</span> <br> S2SONSİLAH ARENASI
                             </h1>
-                            <p style="font-size:1.25rem; color:#e0e7ef; margin-bottom:22px; font-weight:500;">
+                            <p class="news-hero-subtitle">
                                 En yeni gelişmeler, topluluk başarıları, sürpriz etkinlikler ve daha fazlası burada!
                                 <br>
-                                <span style="color:#facc15;">Her gün yeni bir heyecan, her hafta yeni bir
-                                    mücadele!</span>
+                                <span class="news-highlight">Her gün yeni bir heyecan, her hafta yeni bir mücadele!</span>
                             </p>
-                            <div style="display:flex; gap:18px; flex-wrap:wrap;">
-                                <a href="https://discord.gg/Nd7KXYsnFM" target="_blank" class="btn btn-primary"
-                                    style="padding:14px 36px; font-size:1.2rem; border-radius:16px; background:linear-gradient(90deg,#6366f1,#38bdf8); color:#fff; font-weight:bold; box-shadow:0 4px 24px #38bdf855; text-decoration:none;">
-                                    💬 Discord’a Katıl
+                            <div class="news-hero-buttons">
+                                <a href="https://discord.gg/Nd7KXYsnFM" target="_blank" class="news-btn primary">
+                                    💬 Discord'a Katıl
                                 </a>
-                                <a href="https://www.youtube.com/@S2SonSilahPServer" target="_blank"
-                                    class="btn btn-secondary"
-                                    style="padding:14px 36px; font-size:1.2rem; border-radius:16px; background:linear-gradient(90deg,#ef4444,#f59e42); color:#fff; font-weight:bold; box-shadow:0 4px 24px #ef444455; text-decoration:none;">
+                                <a href="https://www.youtube.com/@S2SonSilahPServer" target="_blank" class="news-btn secondary">
                                     ▶️ YouTube
                                 </a>
                             </div>
                         </div>
-                        <div style="flex:1; min-width:260px; text-align:center;">
-                            <img src="https://i.imgur.com/0F9TP2W.png" alt="Arena"
-                                style="width:95%; max-width:340px; border-radius:30px; box-shadow:0 0 40px #38bdf855;">
+                        <div class="news-hero-image">
+                            <img src="https://i.imgur.com/0F9TP2W.png" alt="Arena" class="news-hero-img">
                         </div>
                     </section>
 
                     <!-- Öne Çıkan Haberler (Carousel tarzı) -->
-                    <section style="margin-bottom:40px;">
-                        <div style="display:flex; overflow-x:auto; gap:32px; padding-bottom:8px; scrollbar-width:thin;">
-                            <div
-                                style="min-width:340px; background:linear-gradient(120deg,#0ea5e9 0%,#1e293b 100%); border-radius:24px; box-shadow:0 2px 16px #0006; padding:28px; color:#fff;">
-                                <h3 style="font-size:1.3rem; margin-bottom:10px; color:#facc15;">🗓️ 23 Ağustos 2025
-                                </h3>
-                                <img src="https://i.imgur.com/gydUmV6.png" alt="Turnuva"
-                                    style="width:100%; border-radius:16px; margin-bottom:12px;">
-                                <p style="font-size:1.1rem;">Yeni sezon başlıyor! Klanını hazırla, ödüller için
-                                    mücadeleye katıl!</p>
+                    <section class="featured-news">
+                        <div class="news-carousel">
+                            <div class="news-card featured">
+                                <h3 class="news-date">🗓️ 23 Ağustos 2025</h3>
+                                <img src="https://i.imgur.com/gydUmV6.png" alt="Turnuva" class="news-image">
+                                <p class="news-text">Yeni sezon başlıyor! Klanını hazırla, ödüller için mücadeleye katıl!</p>
                             </div>
-                            <div
-                                style="min-width:340px; background:linear-gradient(120deg,#f59e42 0%,#ef4444 100%); border-radius:24px; box-shadow:0 2px 16px #0006; padding:28px; color:#fff;">
-                                <h3 style="font-size:1.3rem; margin-bottom:10px; color:#fff;">🏆 Büyük Final Duyurusu
-                                </h3>
-                                <img src="https://i.imgur.com/YVM9Wsw.png" alt="Final"
-                                    style="width:100%; border-radius:16px; margin-bottom:12px;">
-                                <p style="font-size:1.1rem;">Büyük final yaklaşıyor! Canlı yayın ve sürpriz ödüller seni
-                                    bekliyor.</p>
+                            <div class="news-card featured">
+                                <h3 class="news-date">🏆 Büyük Final Duyurusu</h3>
+                                <img src="https://i.imgur.com/YVM9Wsw.png" alt="Final" class="news-image">
+                                <p class="news-text">Büyük final yaklaşıyor! Canlı yayın ve sürpriz ödüller seni bekliyor.</p>
                             </div>
-                            <div
-                                style="min-width:340px; background:linear-gradient(120deg,#38bdf8 0%,#6366f1 100%); border-radius:24px; box-shadow:0 2px 16px #0006; padding:28px; color:#fff;">
-                                <h3 style="font-size:1.3rem; margin-bottom:10px; color:#fff;">🎉 Topluluk Etkinliği</h3>
-                                <img src="https://i.imgur.com/W4LwdkH.png" alt="Topluluk"
-                                    style="width:100%; border-radius:16px; margin-bottom:12px;">
-                                <p style="font-size:1.1rem;">Discord’da mini turnuva ve çekiliş! Katıl, eğlen, ödül
-                                    kazan!</p>
+                            <div class="news-card featured">
+                                <h3 class="news-date">🎉 Topluluk Etkinliği</h3>
+                                <img src="https://i.imgur.com/W4LwdkH.png" alt="Topluluk" class="news-image">
+                                <p class="news-text">Discord'da mini turnuva ve çekiliş! Katıl, eğlen, ödül kazan!</p>
                             </div>
-                            <div
-                                style="min-width:340px; background:linear-gradient(120deg,#1e293b 0%,#0ea5e9 100%); border-radius:24px; box-shadow:0 2px 16px #0006; padding:28px; color:#fff;">
-                                <h3 style="font-size:1.3rem; margin-bottom:10px; color:#facc15;">🆕 Yeni Özellikler</h3>
-                                <img src="https://i.imgur.com/EFCkDT2.png" alt="Özellikler"
-                                    style="width:100%; border-radius:16px; margin-bottom:12px;">
-                                <p style="font-size:1.1rem;">Yeni haritalar, geliştirilmiş puan sistemi ve daha fazlası
-                                    yayında!</p>
+                            <div class="news-card featured">
+                                <h3 class="news-date">🆕 Yeni Özellikler</h3>
+                                <img src="https://i.imgur.com/EFCkDT2.png" alt="Özellikler" class="news-image">
+                                <p class="news-text">Yeni haritalar, geliştirilmiş puan sistemi ve daha fazlası yayında!</p>
                             </div>
                         </div>
                     </section>
 
                     <!-- Grid Haberler -->
-                    <section style="display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:36px;">
-                        <div
-                            style="background:rgba(30,41,59,0.92); border-radius:22px; box-shadow:0 2px 16px #0006; padding:32px; display:flex; flex-direction:column; align-items:center;">
-                            <h2 style="color:#38bdf8; font-size:1.5rem; margin-bottom:10px;">🎯 Klan Savaşları Başladı!
-                            </h2>
-                            <p style="color:#fff; margin-bottom:10px;">Klanlar arası savaşlar başladı. En iyi takım
-                                ödülleri kapacak!</p>
-                            <img src="https://i.imgur.com/n6DJpiE.png" alt="Klan Savaşları"
-                                style="width:100%; border-radius:14px;">
+                    <section class="news-grid">
+                        <div class="news-card">
+                            <h2 class="news-title">🎯 Klan Savaşları Başladı!</h2>
+                            <p class="news-text">Klanlar arası savaşlar başladı. En iyi takım ödülleri kapacak!</p>
+                            <img src="https://i.imgur.com/n6DJpiE.png" alt="Klan Savaşları" class="news-image">
                         </div>
-                        <div
-                            style="background:rgba(236,72,153,0.92); border-radius:22px; box-shadow:0 2px 16px #0006; padding:32px; display:flex; flex-direction:column; align-items:center;">
-                            <h2 style="color:#fff; font-size:1.5rem; margin-bottom:10px;">💡 Strateji Rehberi</h2>
-                            <p style="color:#fff; margin-bottom:10px;">Başarılı olmak için takım çalışmasına ve
-                                iletişime önem ver!</p>
-                            <img src="https://i.imgur.com/EFCkDT2.png" alt="Strateji"
-                                style="width:100%; border-radius:14px;">
+                        <div class="news-card">
+                            <h2 class="news-title">💡 Strateji Rehberi</h2>
+                            <p class="news-text">Başarılı olmak için takım çalışmasına ve iletişime önem ver!</p>
+                            <img src="https://i.imgur.com/EFCkDT2.png" alt="Strateji" class="news-image">
                         </div>
-                        <div
-                            style="background:rgba(251,191,36,0.92); border-radius:22px; box-shadow:0 2px 16px #0006; padding:32px; display:flex; flex-direction:column; align-items:center;">
-                            <h2 style="color:#1e293b; font-size:1.5rem; margin-bottom:10px;">📅 Yaklaşan Etkinlikler
-                            </h2>
-                            <p style="color:#1e293b; margin-bottom:10px;">Eylül ayında büyük bir etkinlik planlanıyor!
-                                Takipte kal!</p>
-                            <img src="https://i.imgur.com/T9ygTgk.jpeg" alt="Etkinlikler"
-                                style="width:100%; border-radius:14px;">
+                        <div class="news-card">
+                            <h2 class="news-title">📅 Yaklaşan Etkinlikler</h2>
+                            <p class="news-text">Eylül ayında büyük bir etkinlik planlanıyor! Takipte kal!</p>
+                            <img src="https://i.imgur.com/T9ygTgk.jpeg" alt="Etkinlikler" class="news-image">
                         </div>
-                        <div
-                            style="background:rgba(16,185,129,0.92); border-radius:22px; box-shadow:0 2px 16px #0006; padding:32px; display:flex; flex-direction:column; align-items:center;">
-                            <h2 style="color:#fff; font-size:1.5rem; margin-bottom:10px;">🚀 Sürpriz Güncellemeler</h2>
-                            <p style="color:#fff; margin-bottom:10px;">Yeni modlar ve haritalar çok yakında! Sürprizlere
-                                hazır ol.</p>
-                            <img src="https://i.imgur.com/pQAMKUG.png" alt="Güncellemeler"
-                                style="width:100%; border-radius:14px;">
+                        <div class="news-card">
+                            <h2 class="news-title">🚀 Sürpriz Güncellemeler</h2>
+                            <p class="news-text">Yeni modlar ve haritalar çok yakında! Sürprizlere hazır ol.</p>
+                            <img src="https://i.imgur.com/pQAMKUG.png" alt="Güncellemeler" class="news-image">
                         </div>
                     </section>
                 </div>
 
-
-
-                <!-- anasayfa Tab -->
-                <div class="tab-content active" id="anasayfa-tab" style="background:linear-gradient(180deg,#242424b6,#242424b6);
-                    padding:40px; border-radius:20px; color:white; 
-                    text-align:center; font-family:'Orbitron', sans-serif;">
-
-                    <h1 style="font-size:3rem; font-weight:bold; color:#ff4444; 
-                         text-shadow:0 0 20px #ff0000;">
-                        ARENA'YA HOŞGELDİN!
-                    </h1>
-
-                    <p style="font-size:1.3rem; margin-top:10px; color:#cccccc;">
-                        Adrenalin dolu savaşlara hazır mısın? Hemen indir ve aksiyona katıl!
-                    </p>
-
-                    <!-- Oyun görseli -->
-                    <div style="margin:30px 0;">
-                        <img src="https://i.imgur.com/0F9TP2W.png" alt="Oyun Görseli" style="width:85%; max-width:900px; border-radius:20px; 
-                        box-shadow:0 0 40px rgba(255,0,0,0.4);">
-                    </div>
-
-                    <!-- İndirme Butonu -->
-                    <a href="https://drive.usercontent.google.com/download?id=1oTV7RO7XAXQxj4Q6HvFs3n4jjxQMHgHQ&export=download&authuser=0&confirm=t&uuid=2efbaa94-9585-491d-94f8-510c659b4e7e&at=AN8xHooXJi9kcEmjputtqZCAmKpo%3A1755882719566"
-                        style="display:inline-block; margin:15px; padding:20px 60px; 
-                       border-radius:50px; text-decoration:none; font-size:1.8rem; 
-                       font-weight:bold; color:#fff; 
-                       background:linear-gradient(90deg,#ff0000,#ff4444); 
-                       box-shadow:0 0 25px rgba(255,0,0,0.7); transition:0.3s;">
-                        🎮 OYUNU İNDİR
-                    </a>
-
-                    <!-- Discord Görseli -->
-                    <div style="margin:50px 0 20px 0;">
-                        <img src="https://i.imgur.com/W4LwdkH.png" alt="Discord" style="width:85%; max-width:1000px; border-radius:20px; 
-                        box-shadow:0 0 40px rgba(0,150,255,0.4);">
-                    </div>
-
-                    <!-- Discord Butonu -->
-                    <a href="https://discord.gg/Nd7KXYsnFM" style="display:inline-block; margin:15px; padding:20px 60px; 
-                    border-radius:50px; text-decoration:none; font-size:1.8rem; 
-                    font-weight:bold; color:#fff; 
-                    background:linear-gradient(90deg,#0077ff,#00ccff); 
-                    box-shadow:0 0 25px rgba(0,150,255,0.7); transition:0.3s;">
-                        💬 DİSCORD’A KATIL
-                    </a>
-
-                </div>
-
-
-                <!-- Login Modal -->
-                <div id="login-modal" class="modal hidden">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3>Admin Girişi</h3>
-                            <button id="close-modal" class="close-btn">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <p>İÇERİK DÜZENLEYEBİLİRSİN<strong>S2 SON SİLAH</strong>LORDASTONG <strong>♥</strong></p>
-                            <div class="form-group">
-                                <label for="login-nickname">Nickname</label>
-                                <input type="text" id="login-nickname" placeholder="gitgit" class="input">
+                <!-- Ana Sayfa Tab -->
+                <div class="tab-content active" id="anasayfa-tab">
+                    <div class="home-content">
+                        <div class="home-section">
+                            <h2 class="home-title">ARENA'YA HOSGELDIN!</h2>
+                            <p class="home-subtitle">Adrenalin dolu savaşlara hazır mısın? Hemen indir ve aksiyona katıl!</p>
+                            
+                            <!-- Oyun görseli -->
+                            <div class="home-image-container">
+                                <img src="https://i.imgur.com/0F9TP2W.png" alt="Oyun Görseli" class="home-image">
                             </div>
-                            <div class="form-group">
-                                <label for="login-password">Şifre</label>
-                                <input type="password" id="login-password" placeholder="••••••••" class="input">
-                            </div>
-                            <button id="login-submit" class="btn btn-primary full-width">Giriş Yap</button>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Edit Clan Modal -->
-                <div id="edit-clan-modal" class="modal hidden">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3>Klan Düzenle</h3>
-                            <button class="close-btn" onclick="closeEditClanModal()">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="edit-clan-name">Klan Adı</label>
-                                <input type="text" id="edit-clan-name" class="input">
+                            <!-- İndirme Butonu -->
+                            <div class="home-buttons">
+                                <a href="https://drive.usercontent.google.com/download?id=1oTV7RO7XAXQxj4Q6HvFs3n4jjxQMHgHQ&export=download&authuser=0&confirm=t&uuid=2efbaa94-9585-491d-94f8-510c659b4e7e&at=AN8xHooXJi9kcEmjputtqZCAmKpo%3A1755882719566" class="home-btn primary">
+                                    🎮 OYUNU İNDİR
+                                </a>
                             </div>
-                            <div class="form-group">
-                                <label for="edit-clan-logo">Logo</label>
-                                <input type="file" id="edit-clan-logo" accept="image/*" class="input">
+
+                            <!-- Discord Görseli -->
+                            <div class="home-image-container">
+                                <img src="https://i.imgur.com/W4LwdkH.png" alt="Discord" class="home-image">
                             </div>
-                            <div class="form-group">
-                                <label for="edit-clan-points">Puan</label>
-                                <input type="number" id="edit-clan-points" class="input" min="0">
-                            </div>
-                            <div class="form-group">
-                                <label>Oyuncular</label>
-                                <div class="player-editor">
-                                    <div id="edit-clan-players" class="player-list"></div>
-                                    <div class="input-group">
-                                        <input type="text" id="new-player" placeholder="Oyuncu ekle" class="input">
-                                        <button onclick="addPlayer()" class="btn btn-primary">Ekle</button>
-                                        <button onclick="clearPlayers()" class="btn btn-secondary">Temizle</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="button-group">
-                                <button onclick="saveClan()" class="btn btn-primary">Kaydet</button>
-                                <button onclick="closeEditClanModal()" class="btn btn-secondary">İptal</button>
+
+                            <!-- Discord Butonu -->
+                            <div class="home-buttons">
+                                <a href="https://discord.gg/Nd7KXYsnFM" class="home-btn secondary">
+                                    💬 DİSCORD'A KATIL
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </main>
+    </div>
 
-                <!-- Edit Map Modal -->
-                <div id="edit-map-modal" class="modal hidden">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3>Harita Düzenle</h3>
-                            <button class="close-btn" onclick="closeEditMapModal()">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="edit-map-name">Harita Adı</label>
-                                <input type="text" id="edit-map-name" class="input">
-                            </div>
-                            <div class="form-group">
-                                <label for="edit-map-image">Görsel</label>
-                                <input type="file" id="edit-map-image" accept="image/*" class="input">
-                            </div>
-                            <div class="form-group">
-                                <label>
-                                    <input type="checkbox" id="edit-map-active"> Aktif
-                                </label>
-                            </div>
-                            <div class="button-group">
-                                <button onclick="saveMap()" class="btn btn-primary">Kaydet</button>
-                                <button onclick="closeEditMapModal()" class="btn btn-secondary">İptal</button>
-                            </div>
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Admin Girişi</h3>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>İÇERİK DÜZENLEYEBİLİRSİN<strong>S2SONSİLAH</strong>LORDASTONG <strong>♥</strong></p>
+                <div class="form-group">
+                    <label for="login-nickname">Nickname</label>
+                    <input type="text" id="login-nickname" placeholder="gitgit" class="input">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Şifre</label>
+                    <input type="password" id="login-password" placeholder="••••••••" class="input">
+                </div>
+                <button id="login-submit" class="btn btn-primary full-width">Giriş Yap</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Clan Modal -->
+    <div id="edit-clan-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Klan Düzenle</h3>
+                <button class="close-btn" onclick="closeEditClanModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="edit-clan-name">Klan Adı</label>
+                    <input type="text" id="edit-clan-name" class="input">
+                </div>
+                <div class="form-group">
+                    <label for="edit-clan-logo">Logo</label>
+                    <input type="file" id="edit-clan-logo" accept="image/*" class="input">
+                </div>
+                <div class="form-group">
+                    <label for="edit-clan-points">Puan</label>
+                    <input type="number" id="edit-clan-points" class="input" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Oyuncular</label>
+                    <div class="player-editor">
+                        <div id="edit-clan-players" class="player-list"></div>
+                        <div class="input-group">
+                            <input type="text" id="new-player" placeholder="Oyuncu ekle" class="input">
+                            <button onclick="addPlayer()" class="btn btn-primary">Ekle</button>
+                            <button onclick="clearPlayers()" class="btn btn-secondary">Temizle</button>
                         </div>
                     </div>
                 </div>
+                <div class="button-group">
+                    <button onclick="saveClan()" class="btn btn-primary">Kaydet</button>
+                    <button onclick="closeEditClanModal()" class="btn btn-secondary">İptal</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Edit Map Modal -->
+    <div id="edit-map-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Harita Düzenle</h3>
+                <button class="close-btn" onclick="closeEditMapModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="edit-map-name">Harita Adı</label>
+                    <input type="text" id="edit-map-name" class="input">
+                </div>
+                <div class="form-group">
+                    <label for="edit-map-image">Görsel</label>
+                    <input type="file" id="edit-map-image" accept="image/*" class="input">
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="edit-map-active"> Aktif
+                    </label>
+                </div>
+                <div class="button-group">
+                    <button onclick="saveMap()" class="btn btn-primary">Kaydet</button>
+                    <button onclick="closeEditMapModal()" class="btn btn-secondary">İptal</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        // Sayfa yüklendiğinde gerekli ayarları yap
+        document.addEventListener('DOMContentLoaded', function () {
+            // Sağ tık menüsünü devre dışı bırak
+            document.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+                return false;
+            });
 
+            // Geliştirici araçları kısayollarını engelleme
+            document.addEventListener('keydown', function (e) {
+                // F11 (tam ekran)
+                if (e.key === 'F11') {
+                    e.preventDefault();
+                    return false;
+                }
 
+                // F12 (geliştirici araçları)
+                if (e.key === 'F12') {
+                    e.preventDefault();
+                    return false;
+                }
 
+                // Ctrl+Shift+I (geliştirici araçları)
+                if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+                    e.preventDefault();
+                    return false;
+                }
 
+                // Ctrl+U (kaynak kodu görüntüle)
+                if (e.ctrlKey && e.key === 'u') {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        });
+    </script>
 
-
-
-
-                <script>
-                    // Sayfa yüklendiğinde gerekli ayarları yap
-                    document.addEventListener('DOMContentLoaded', function () {
-                        // Sağ tık menüsünü devre dışı bırak
-                        document.addEventListener('contextmenu', function (e) {
-                            e.preventDefault();
-                            return false;
-                        });
-
-                        // Geliştirici araçları kısayollarını engelleme
-                        document.addEventListener('keydown', function (e) {
-                            // F11 (tam ekran)
-                            if (e.key === 'F11') {
-                                e.preventDefault();
-                                return false;
-                            }
-
-                            // F12 (geliştirici araçları)
-                            if (e.key === 'F12') {
-                                e.preventDefault();
-                                return false;
-                            }
-
-                            // Ctrl+Shift+I (geliştirici araçları)
-                            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-                                e.preventDefault();
-                                return false;
-                            }
-
-                            // Ctrl+U (kaynak kodu görüntüle)
-                            if (e.ctrlKey && e.key === 'u') {
-                                e.preventDefault();
-                                return false;
-                            }
-                        });
-                    });
-                </script>
-
-
-
-
-
-
-
-
-
-
-                <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 
 </html>
