@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,38 +8,30 @@
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="app">
         <!-- Admin Controls -->
         <div class="admin-controls">
-<!-- Sosyal medya butonları başlangıç -->
-<a href="https://www.instagram.com/agitt.pmkcu/" target="_blank" 
-   class="btn btn-secondary btn-icon" 
-   title="Instagram" 
-   style="font-size:1.5rem; margin-right:10px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
-         alt="Instagram" 
-         style="width:1.5em; height:1.5em; vertical-align:middle;">
-</a>
+            <!-- Sosyal medya butonları başlangıç -->
+            <a href="https://www.instagram.com/agitt.pmkcu/" target="_blank" class="btn btn-secondary btn-icon"
+                title="Instagram" style="font-size:1.5rem; margin-right:10px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
+                    style="width:1.5em; height:1.5em; vertical-align:middle;">
+            </a>
 
-<a href="https://tiktok.com/@YOUR_TIKTOK" target="_blank" 
-   class="btn btn-secondary btn-icon" 
-   title="TikTok" 
-   style="font-size:1.5rem; margin-right:10px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Tiktok_icon.svg" 
-         alt="TikTok" 
-         style="width:1.5em; height:1.5em; vertical-align:middle">
-</a>
+            <a href="https://tiktok.com/@YOUR_TIKTOK" target="_blank" class="btn btn-secondary btn-icon" title="TikTok"
+                style="font-size:1.5rem; margin-right:10px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Tiktok_icon.svg" alt="TikTok"
+                    style="width:1.5em; height:1.5em; vertical-align:middle">
+            </a>
 
-<a href="https://www.youtube.com/@S2SonSilahPServer" target="_blank" 
-   class="btn btn-secondary btn-icon" 
-   title="YouTube" 
-   style="font-size:1.5rem;">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/YouTube%20icon%20(2013-2017).png" 
-         alt="YouTube" 
-         style="width:1.5em; height:1.2em; vertical-align:middle;">
-</a>
-<!-- Sosyal medya butonları bitiş -->
+            <a href="https://www.youtube.com/@S2SonSilahPServer" target="_blank" class="btn btn-secondary btn-icon"
+                title="YouTube" style="font-size:1.5rem;">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/YouTube%20icon%20(2013-2017).png"
+                    alt="YouTube" style="width:1.5em; height:1.2em; vertical-align:middle;">
+            </a>
+            <!-- Sosyal medya butonları bitiş -->
 
             <div id="admin-status" class="admin-status hidden">
                 <span class="admin-badge">Admin</span>
@@ -55,9 +48,8 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <img src="https://i.imgur.com/n6DJpiE.png" 
-            alt="Turnuva" 
-            style="width:220px; height:auto; border-radius:220px; display:block; margin:0 auto; margin-bottom:40px;">
+            <img src="https://i.imgur.com/n6DJpiE.png" alt="Turnuva"
+                style="width:220px; height:auto; border-radius:220px; display:block; margin:0 auto; margin-bottom:40px;">
 
 
             <!-- Tabs -->
@@ -73,11 +65,12 @@
                 <!-- Viewer Tab -->
                 <div class="tab-content" id="viewer-tab">
                     <div class="tab-section">
-                    <div class="alert alert-info">
-                        <h3>✨DUYURULAR✨</h3> 
-                        <p>🔥YENİ TURNUVA ZAMANI : BELİRSİZ BELİRLENECEK</p>
-                        <p>📰 Haberler kanalı eklenmiştir güncel duyuruları takip edebileceğiniz bir kategoridir.</p>
-                    </div>
+                        <div class="alert alert-info">
+                            <h3>✨DUYURULAR✨</h3>
+                            <p>🔥YENİ TURNUVA ZAMANI : BELİRSİZ BELİRLENECEK</p>
+                            <p>📰 Haberler kanalı eklenmiştir güncel duyuruları takip edebileceğiniz bir kategoridir.
+                            </p>
+                        </div>
                         <!-- Rankings -->
                         <div class="card">
                             <div class="card-header">
@@ -101,7 +94,8 @@
                         <!-- Info Box -->
                         <div class="alert alert-info">
                             <h3>Bilgi</h3>
-                            <p>Bu site s2 son silah için klan turnuvalarına özel olarak hazırlanmıştır en iyi sıralama kimin ise özel ödülleri olacaktır.</p>
+                            <p>Bu site s2 son silah için klan turnuvalarına özel olarak hazırlanmıştır en iyi sıralama
+                                kimin ise özel ödülleri olacaktır.</p>
                         </div>
                     </div>
                 </div>
@@ -189,7 +183,8 @@
                                                 <h3 class="card-title">📋 Kopyala — Discord Duyurusu</h3>
                                             </div>
                                             <div class="card-content">
-                                                <textarea id="match-summary" class="textarea" readonly rows="8"></textarea>
+                                                <textarea id="match-summary" class="textarea" readonly
+                                                    rows="8"></textarea>
                                                 <div class="button-group">
                                                     <button id="copy-summary" class="btn btn-primary">
                                                         📋 Kopyala
@@ -203,14 +198,18 @@
                                         <div class="form-group">
                                             <label>Maç Sonucu</label>
                                             <div class="button-group">
-                                                <button id="team-a-wins" class="btn btn-secondary">Takım A Kazandı (+3)</button>
-                                                <button id="team-b-wins" class="btn btn-secondary">Takım B Kazandı (+3)</button>
+                                                <button id="team-a-wins" class="btn btn-secondary">Takım A Kazandı
+                                                    (+3)</button>
+                                                <button id="team-b-wins" class="btn btn-secondary">Takım B Kazandı
+                                                    (+3)</button>
                                             </div>
                                         </div>
 
                                         <div class="alert alert-warning">
                                             <h3>Hızlı Puan Bilgisi</h3>
-                                            <p>Kazanan klana <strong>+3 puan</strong> eklenir. Kaybedene işlem yapılmaz. Bu demo akışında doğrudan puan yazmıyoruz; Admin → Klanlar bölümünde ilgili klanın puanını düzenleyebilirsiniz.</p>
+                                            <p>Kazanan klana <strong>+3 puan</strong> eklenir. Kaybedene işlem yapılmaz.
+                                                Bu demo akışında doğrudan puan yazmıyoruz; Admin → Klanlar bölümünde
+                                                ilgili klanın puanını düzenleyebilirsiniz.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -281,8 +280,11 @@
                                 <div>• Klan ekle/sil, logo ve oyuncu listesi düzenle.</div>
                                 <div>• Harita galerisine görsel yükle, aktif/pasif yap.</div>
                                 <div>• Mod listesini düzenle.</div>
-                                <div>• Veto & Kura sekmesinde maç sonuçlarını işleyip kazanana <strong>+3</strong> puan ekle.</div>
-                                <div>• Kalıcılık için <strong>JSON Dışa Aktar</strong> ile yedekle, gerekirse <strong>İçe Aktar</strong>.</div>
+                                <div>• Veto & Kura sekmesinde maç sonuçlarını işleyip kazanana <strong>+3</strong> puan
+                                    ekle.</div>
+                                <div>• Kalıcılık için <strong>JSON Dışa Aktar</strong> ile yedekle, gerekirse
+                                    <strong>İçe Aktar</strong>.
+                                </div>
                             </div>
                         </div>
 
@@ -330,7 +332,8 @@
                                 <div id="admin-controls-mods" class="admin-controls-section hidden">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <input type="text" id="new-mod" placeholder="Mod ekle (örn. BO1)" class="input">
+                                            <input type="text" id="new-mod" placeholder="Mod ekle (örn. BO1)"
+                                                class="input">
                                             <button id="add-mod" class="btn btn-primary">Ekle</button>
                                             <button id="clear-mods" class="btn btn-secondary">Temizle</button>
                                         </div>
@@ -340,140 +343,167 @@
                         </div>
                     </div>
                 </div>
-                                <!-- Haberler Tab -->
-            <div class="tab-content" id="haberler-tab">
-                <div class="alert alert-info">
-                <h3>✨23.08.2025✨</h3> 
-                <p>
-                  <img src="https://i.imgur.com/gydUmV6.png" alt="Turnuva" style="width:720px; height:auto; border-radius:70px;">
-                </p>
+                <!-- Haberler Tab -->
+                <div class="tab-content" id="haberler-tab">
+                    <div class="alert alert-info">
+                        <h3>✨23.08.2025✨</h3>
+                        <p>
+                            <img src="https://i.imgur.com/gydUmV6.png" alt="Turnuva"
+                                style="width:720px; height:auto; border-radius:70px;">
+                        </p>
+                    </div>
                 </div>
-           </div>                    
-            <div class="tab-content" id="haberler-tab">
-                <div class="alert alert-info">
-                <h3>✨22.08.2025✨</h3> 
-                <p>
-                  <img src="https://i.imgur.com/pQAMKUG.png" alt="Turnuva" style="width:720px; height:auto; border-radius:70px;">
-                </p>
-                <p>ARTIK KLANLARIN BİR AMACI VAR !</p>
-                <p>⭐Discorda gel klanı oluştur ve birincilik için savaş !⭐</p>
+                <div class="tab-content" id="haberler-tab">
+                    <div class="alert alert-info">
+                        <h3>✨22.08.2025✨</h3>
+                        <p>
+                            <img src="https://i.imgur.com/pQAMKUG.png" alt="Turnuva"
+                                style="width:720px; height:auto; border-radius:70px;">
+                        </p>
+                        <p>ARTIK KLANLARIN BİR AMACI VAR !</p>
+                        <p>⭐Discorda gel klanı oluştur ve birincilik için savaş !⭐</p>
+                    </div>
                 </div>
-           </div>
-                                           <!-- anasayfa Tab -->
-            <div class="tab-content active" id="anasayfa-tab">
-                <div class="alert alert-info">
-                <h3>OYUNU AŞAĞIDA BULUNAN BUTONDAN İNDİREBİLİRSİNİZ</h3> 
-                <p>
-                  <img src="https://i.imgur.com/0F9TP2W.png" alt="Turnuva" style="width:720px; height:auto; border-radius:40px;">
-                </p>
-                <a href="https://drive.usercontent.google.com/download?id=1oTV7RO7XAXQxj4Q6HvFs3n4jjxQMHgHQ&export=download&authuser=0&confirm=t&uuid=2efbaa94-9585-491d-94f8-510c659b4e7e&at=AN8xHooXJi9kcEmjputtqZCAmKpo%3A1755882719566" 
-                   class="btn btn-primary" 
-                   style="display:inline-block; margin-top:10px; padding:20px 40px; border-radius:16px; text-decoration:none; color:white; font-size:1.5rem; background:linear-gradient(90deg,#700e0e,#8d0606); box-shadow:0 4px 24px rgba(0,0,0,0.3); font-weight:bold;">
-                    OYUNU İNDİR
-                </a>
-                <div style="height: 30px;"></div>
-                <p>
-                  <img src="https://i.imgur.com/W4LwdkH.png" alt="Turnuva" style="width:1020px; height:auto; border-radius:40px;">
-                </p>
-                <a href="https://discord.gg/Nd7KXYsnFM" 
-                   class="btn btn-primary" 
-                   style="display:inline-block; margin-top:10px; padding:20px 40px; border-radius:16px; text-decoration:none; color:white; font-size:1.5rem; background:linear-gradient(90deg,#700e0e,#8d0606); box-shadow:0 4px 24px rgba(0,0,0,0.3); font-weight:bold;">
-                    DİSCORDA KATIL
-                </a>
-                </div>
-           </div>
-        </main>
-    </div>
 
-    <!-- Login Modal -->
-    <div id="login-modal" class="modal hidden">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Admin Girişi</h3>
-                <button id="close-modal" class="close-btn">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>İÇERİK DÜZENLEYEBİLİRSİN<strong>S2 SON SİLAH</strong>LORDASTONG <strong>♥</strong></p>
-                <div class="form-group">
-                    <label for="login-nickname">Nickname</label>
-                    <input type="text" id="login-nickname" placeholder="gitgit" class="input">
-                </div>
-                <div class="form-group">
-                    <label for="login-password">Şifre</label>
-                    <input type="password" id="login-password" placeholder="••••••••" class="input">
-                </div>
-                <button id="login-submit" class="btn btn-primary full-width">Giriş Yap</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- Edit Clan Modal -->
-    <div id="edit-clan-modal" class="modal hidden">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Klan Düzenle</h3>
-                <button class="close-btn" onclick="closeEditClanModal()">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="edit-clan-name">Klan Adı</label>
-                    <input type="text" id="edit-clan-name" class="input">
+
+                <!-- anasayfa Tab -->
+                <div class="tab-content active" id="anasayfa-tab" style="background:linear-gradient(180deg,#242424b6,#242424b6);
+                    padding:40px; border-radius:20px; color:white; 
+                    text-align:center; font-family:'Orbitron', sans-serif;">
+
+                    <h1 style="font-size:3rem; font-weight:bold; color:#ff4444; 
+                         text-shadow:0 0 20px #ff0000;">
+                        ARENA'YA HOŞGELDİN!
+                    </h1>
+
+                    <p style="font-size:1.3rem; margin-top:10px; color:#cccccc;">
+                        Adrenalin dolu savaşlara hazır mısın? Hemen indir ve aksiyona katıl!
+                    </p>
+
+                    <!-- Oyun görseli -->
+                    <div style="margin:30px 0;">
+                        <img src="https://i.imgur.com/0F9TP2W.png" alt="Oyun Görseli" style="width:85%; max-width:900px; border-radius:20px; 
+                        box-shadow:0 0 40px rgba(255,0,0,0.4);">
+                    </div>
+
+                    <!-- İndirme Butonu -->
+                    <a href="https://drive.usercontent.google.com/download?id=1oTV7RO7XAXQxj4Q6HvFs3n4jjxQMHgHQ&export=download&authuser=0&confirm=t&uuid=2efbaa94-9585-491d-94f8-510c659b4e7e&at=AN8xHooXJi9kcEmjputtqZCAmKpo%3A1755882719566"
+                        style="display:inline-block; margin:15px; padding:20px 60px; 
+                       border-radius:50px; text-decoration:none; font-size:1.8rem; 
+                       font-weight:bold; color:#fff; 
+                       background:linear-gradient(90deg,#ff0000,#ff4444); 
+                       box-shadow:0 0 25px rgba(255,0,0,0.7); transition:0.3s;">
+                        🎮 OYUNU İNDİR
+                    </a>
+
+                    <!-- Discord Görseli -->
+                    <div style="margin:50px 0 20px 0;">
+                        <img src="https://i.imgur.com/W4LwdkH.png" alt="Discord" style="width:85%; max-width:1000px; border-radius:20px; 
+                        box-shadow:0 0 40px rgba(0,150,255,0.4);">
+                    </div>
+
+                    <!-- Discord Butonu -->
+                    <a href="https://discord.gg/Nd7KXYsnFM" style="display:inline-block; margin:15px; padding:20px 60px; 
+                    border-radius:50px; text-decoration:none; font-size:1.8rem; 
+                    font-weight:bold; color:#fff; 
+                    background:linear-gradient(90deg,#0077ff,#00ccff); 
+                    box-shadow:0 0 25px rgba(0,150,255,0.7); transition:0.3s;">
+                        💬 DİSCORD’A KATIL
+                    </a>
+
                 </div>
-                <div class="form-group">
-                    <label for="edit-clan-logo">Logo</label>
-                    <input type="file" id="edit-clan-logo" accept="image/*" class="input">
-                </div>
-                <div class="form-group">
-                    <label for="edit-clan-points">Puan</label>
-                    <input type="number" id="edit-clan-points" class="input" min="0">
-                </div>
-                <div class="form-group">
-                    <label>Oyuncular</label>
-                    <div class="player-editor">
-                        <div id="edit-clan-players" class="player-list"></div>
-                        <div class="input-group">
-                            <input type="text" id="new-player" placeholder="Oyuncu ekle" class="input">
-                            <button onclick="addPlayer()" class="btn btn-primary">Ekle</button>
-                            <button onclick="clearPlayers()" class="btn btn-secondary">Temizle</button>
+
+
+                <!-- Login Modal -->
+                <div id="login-modal" class="modal hidden">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Admin Girişi</h3>
+                            <button id="close-modal" class="close-btn">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p>İÇERİK DÜZENLEYEBİLİRSİN<strong>S2 SON SİLAH</strong>LORDASTONG <strong>♥</strong></p>
+                            <div class="form-group">
+                                <label for="login-nickname">Nickname</label>
+                                <input type="text" id="login-nickname" placeholder="gitgit" class="input">
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Şifre</label>
+                                <input type="password" id="login-password" placeholder="••••••••" class="input">
+                            </div>
+                            <button id="login-submit" class="btn btn-primary full-width">Giriş Yap</button>
                         </div>
                     </div>
                 </div>
-                <div class="button-group">
-                    <button onclick="saveClan()" class="btn btn-primary">Kaydet</button>
-                    <button onclick="closeEditClanModal()" class="btn btn-secondary">İptal</button>
+
+                <!-- Edit Clan Modal -->
+                <div id="edit-clan-modal" class="modal hidden">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Klan Düzenle</h3>
+                            <button class="close-btn" onclick="closeEditClanModal()">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="edit-clan-name">Klan Adı</label>
+                                <input type="text" id="edit-clan-name" class="input">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-clan-logo">Logo</label>
+                                <input type="file" id="edit-clan-logo" accept="image/*" class="input">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-clan-points">Puan</label>
+                                <input type="number" id="edit-clan-points" class="input" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label>Oyuncular</label>
+                                <div class="player-editor">
+                                    <div id="edit-clan-players" class="player-list"></div>
+                                    <div class="input-group">
+                                        <input type="text" id="new-player" placeholder="Oyuncu ekle" class="input">
+                                        <button onclick="addPlayer()" class="btn btn-primary">Ekle</button>
+                                        <button onclick="clearPlayers()" class="btn btn-secondary">Temizle</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-group">
+                                <button onclick="saveClan()" class="btn btn-primary">Kaydet</button>
+                                <button onclick="closeEditClanModal()" class="btn btn-secondary">İptal</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Edit Map Modal -->
-    <div id="edit-map-modal" class="modal hidden">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Harita Düzenle</h3>
-                <button class="close-btn" onclick="closeEditMapModal()">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="edit-map-name">Harita Adı</label>
-                    <input type="text" id="edit-map-name" class="input">
+                <!-- Edit Map Modal -->
+                <div id="edit-map-modal" class="modal hidden">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Harita Düzenle</h3>
+                            <button class="close-btn" onclick="closeEditMapModal()">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="edit-map-name">Harita Adı</label>
+                                <input type="text" id="edit-map-name" class="input">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-map-image">Görsel</label>
+                                <input type="file" id="edit-map-image" accept="image/*" class="input">
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="edit-map-active"> Aktif
+                                </label>
+                            </div>
+                            <div class="button-group">
+                                <button onclick="saveMap()" class="btn btn-primary">Kaydet</button>
+                                <button onclick="closeEditMapModal()" class="btn btn-secondary">İptal</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="edit-map-image">Görsel</label>
-                    <input type="file" id="edit-map-image" accept="image/*" class="input">
-                </div>
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" id="edit-map-active"> Aktif
-                    </label>
-                </div>
-                <div class="button-group">
-                    <button onclick="saveMap()" class="btn btn-primary">Kaydet</button>
-                    <button onclick="closeEditMapModal()" class="btn btn-secondary">İptal</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 
@@ -484,45 +514,43 @@
 
 
 
-<script>
-        // Sayfa yüklendiğinde gerekli ayarları yap
-        document.addEventListener('DOMContentLoaded', function() {
-            // Sağ tık menüsünü devre dışı bırak
-            document.addEventListener('contextmenu', function(e) {
-                e.preventDefault();
-                return false;
-            });
+                <script>
+                    // Sayfa yüklendiğinde gerekli ayarları yap
+                    document.addEventListener('DOMContentLoaded', function () {
+                        // Sağ tık menüsünü devre dışı bırak
+                        document.addEventListener('contextmenu', function (e) {
+                            e.preventDefault();
+                            return false;
+                        });
 
-            // Geliştirici araçları kısayollarını engelleme
-            document.addEventListener('keydown', function(e) {
-                // F11 (tam ekran)
-                if (e.key === 'F11') {
-                    e.preventDefault();
-                    return false;
-                }
+                        // Geliştirici araçları kısayollarını engelleme
+                        document.addEventListener('keydown', function (e) {
+                            // F11 (tam ekran)
+                            if (e.key === 'F11') {
+                                e.preventDefault();
+                                return false;
+                            }
 
-                // F12 (geliştirici araçları)
-                if (e.key === 'F12') {
-                    e.preventDefault();
-                    return false;
-                }
+                            // F12 (geliştirici araçları)
+                            if (e.key === 'F12') {
+                                e.preventDefault();
+                                return false;
+                            }
 
-                // Ctrl+Shift+I (geliştirici araçları)
-                if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-                    e.preventDefault();
-                    return false;
-                }
+                            // Ctrl+Shift+I (geliştirici araçları)
+                            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+                                e.preventDefault();
+                                return false;
+                            }
 
-                // Ctrl+U (kaynak kodu görüntüle)
-                if (e.ctrlKey && e.key === 'u') {
-                    e.preventDefault();
-                    return false;
-                }
-            });
-        });
-    </script>
-
-
+                            // Ctrl+U (kaynak kodu görüntüle)
+                            if (e.ctrlKey && e.key === 'u') {
+                                e.preventDefault();
+                                return false;
+                            }
+                        });
+                    });
+                </script>
 
 
 
@@ -531,7 +559,10 @@
 
 
 
-    <script src="script.js"></script>
+
+
+                <script src="script.js"></script>
 </body>
 <script src="script.js"></script>
+
 </html>
