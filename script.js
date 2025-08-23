@@ -100,24 +100,44 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeTabs() {
     const tabTriggers = document.querySelectorAll('.tab-trigger');
     const tabContents = document.querySelectorAll('.tab-content');
+    const navLinks = document.querySelectorAll('.nav-link');
 
+    // Function to switch tabs
+    function switchTab(targetTab) {
+        // Update tab triggers
+        tabTriggers.forEach(t => t.classList.remove('active'));
+        const activeTrigger = document.querySelector(`[data-tab="${targetTab}"]`);
+        if (activeTrigger) activeTrigger.classList.add('active');
+        
+        // Update tab content
+        tabContents.forEach(content => {
+            content.classList.remove('active');
+            if (content.id === `${targetTab}-tab`) {
+                content.classList.add('active');
+            }
+        });
+        
+        // Update navigation links
+        navLinks.forEach(link => link.classList.remove('active'));
+        const activeNavLink = document.querySelector(`[data-tab="${targetTab}"]`);
+        if (activeNavLink) activeNavLink.classList.add('active');
+    }
+
+    // Tab trigger click events
     tabTriggers.forEach(trigger => {
         trigger.addEventListener('click', () => {
             if (trigger.disabled) return;
-            
             const targetTab = trigger.dataset.tab;
-            
-            // Update triggers
-            tabTriggers.forEach(t => t.classList.remove('active'));
-            trigger.classList.add('active');
-            
-            // Update content
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-                if (content.id === `${targetTab}-tab` || content.id === `${targetTab}-tab-content`) {
-                    content.classList.add('active');
-                }
-            });
+            switchTab(targetTab);
+        });
+    });
+
+    // Navigation link click events
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetTab = link.dataset.tab;
+            switchTab(targetTab);
         });
     });
 }
@@ -173,14 +193,6 @@ function initializeAuth() {
             document.getElementById('login-modal').classList.add('hidden');
             render();
         } 
-        if (nickname === 'FE' && password === 'fe2121') {
-            isAdmin = true;
-            editMode = true;
-            editModeToggle.checked = true;
-            updateAuthUI();
-            document.getElementById('login-modal').classList.add('hidden');
-            render();
-        } 
         
     });
 
@@ -197,10 +209,24 @@ function updateAuthUI() {
         loginBtn.classList.add('hidden');
         adminStatus.classList.remove('hidden');
         adminTab.disabled = false;
+        
+        // Enable admin navigation link
+        const adminNavLink = document.getElementById('admin-nav-link');
+        if (adminNavLink) {
+            adminNavLink.disabled = false;
+            adminNavLink.classList.remove('disabled');
+        }
     } else {
         loginBtn.classList.remove('hidden');
         adminStatus.classList.add('hidden');
         adminTab.disabled = true;
+        
+        // Disable admin navigation link
+        const adminNavLink = document.getElementById('admin-nav-link');
+        if (adminNavLink) {
+            adminNavLink.disabled = true;
+            adminNavLink.classList.add('disabled');
+        }
     }
 }
 
