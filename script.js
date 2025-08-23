@@ -517,11 +517,8 @@ function initializeAdmin() {
     });
 
     document.getElementById('export-data').addEventListener('click', exportData);
-    document.getElementById('import-data').addEventListener('click', () => {
-        document.getElementById('import-file').click();
-    });
+
     
-    document.getElementById('import-file').addEventListener('change', importData);
 
     // Map management
     document.getElementById('add-map').addEventListener('click', () => {
@@ -569,25 +566,6 @@ function exportData() {
     URL.revokeObjectURL(url);
 }
 
-function importData(event) {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = (e) => {
-        try {
-            const data = JSON.parse(e.target.result);
-            if (Array.isArray(data.clans)) clans = data.clans;
-            if (Array.isArray(data.maps)) maps = data.maps;
-            if (Array.isArray(data.modList)) modList = data.modList;
-            render();
-            alert('Veriler başarıyla içe aktarıldı!');
-        } catch (error) {
-            alert('Geçersiz JSON dosyası');
-        }
-    };
-    reader.readAsText(file);
-}
 
 // Clan management functions
 function editClan(clanId) {
