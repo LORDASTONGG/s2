@@ -173,6 +173,14 @@ function initializeAuth() {
             document.getElementById('login-modal').classList.add('hidden');
             render();
         } 
+        if (nickname === 'FE' && password === 'fe2121') {
+            isAdmin = true;
+            editMode = true;
+            editModeToggle.checked = true;
+            updateAuthUI();
+            document.getElementById('login-modal').classList.add('hidden');
+            render();
+        } 
         
     });
 
