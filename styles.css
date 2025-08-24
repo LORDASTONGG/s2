@@ -1548,3 +1548,29 @@ label {
     
 
 }
+
+.lang-toggle-container {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 2001;
+}
+.lang-toggle-btn {
+    background: linear-gradient(135deg, #1f1f1f, #000000);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 0.4rem 1.1rem;
+    font-size: 1rem;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.lang-toggle-btn:hover {
+    background: linear-gradient(135deg, #000000, #1f1f1f);
+    border-color: #fff;
+    color: #ffd700;
+    transform: scale(1.07);
+}
