@@ -87,6 +87,147 @@ const logoutBtn = document.getElementById('logout-btn');
 const editModeToggle = document.getElementById('edit-mode');
 const adminTab = document.getElementById('admin-tab');
 
+// === LANGUAGE SWITCHER ===
+const translations = {
+  tr: {
+    'lang': 'EN',
+    'site-title': 'S2SONSİLAH',
+    'site-subtitle': 'D187: SIN STREETS',
+    'nav-home': 'Ana Sayfa',
+    'nav-rank': 'Klan Sıralaması',
+    'nav-match': 'Maç Oluştur',
+    'nav-news': 'Haberler',
+    'nav-admin': 'Admin',
+    'home-title': "ARENA'YA HOSGELDIN!",
+    'home-subtitle': 'Adrenalin dolu savaşlara hazır mısın? Hemen indir ve aksiyona katıl!',
+    'download-btn': '🎮 OYUNU İNDİR',
+    'discord-btn': "💬 DİSCORD'A KATIL",
+    'announcements-title': '✨DUYURULAR✨',
+    'announcements-1': '🔥YENİ TURNUVA ZAMANI : BELİRSİZ BELİRLENECEK',
+    'announcements-2': '📰 Haberler kanalı eklenmiştir güncel duyuruları takip edebileceğiniz bir kategoridir.',
+    'rankings-title': 'SIRALAMA',
+    'clans-title': 'KLANLAR',
+    'login-title': 'Admin Girişi',
+    'login-btn': 'Giriş Yap',
+    'admin-panel-title': 'Admin Paneli',
+    'admin-tip-1': '• Klan ekle/sil, logo ve oyuncu listesi düzenle.',
+    'admin-tip-2': '• Harita galerisine görsel yükle, aktif/pasif yap.',
+    'admin-tip-3': '• Mod listesini düzenle.',
+    'admin-tip-4': '• Veto & Kura sekmesinde maç sonuçlarını işleyip kazanana <strong>+3</strong> puan ekle.',
+    'admin-tip-5': '• Kalıcılık için <strong>JSON Dışa Aktar</strong> ile yedekle, gerekirse <strong>İçe Aktar</strong>.',
+    'news-main-title': '⚡ GÜNCEL HABERLER',
+    'news-main-desc': 'En yeni gelişmeler, topluluk başarıları, sürpriz etkinlikler ve daha fazlası burada!<br><span class="news-highlight" data-i18n="news-main-highlight">Her gün yeni bir heyecan, her hafta yeni bir mücadele!</span>',
+    'news-main-highlight': 'Her gün yeni bir heyecan, her hafta yeni bir mücadele!',
+    'footer-scroll-1': 'S2 Son Silah • Kar Amacı Gütmeyen Özel Sunucu Projesinin Resmi Web Sitesi',
+    'footer-scroll-2': 'S2 Son Silah Özel Sunucu topluluğu için oluşturulan resmi web sitesine hoş geldiniz! Burada bulacaklarınız:',
+    'footer-scroll-3': 'En son güncellemeler ve yenilikler',
+    'footer-scroll-4': 'Oyun içi etkinliklerle ilgili duyurular',
+    'footer-scroll-5': 'Topluluk haberleri ve özel içerikler',
+    'footer-scroll-6': 'Amacımız S2 Son Silah deneyiminizi geliştirmek ve oyuncuları bir araya getirmek.',
+    'footer-copyright': '&copy; Lordastong 2025 S2 Son Silah websitesi.',
+    'mods-title': 'Modlar',
+    'mod-input-placeholder': 'Mod ekle (örn. BO1)',
+    'add-mod-btn': 'Ekle',
+    'clear-mods-btn': 'Temizle',
+    'info-title': 'Bilgi',
+    'info-text': 'Bu site s2 son silah için klan turnuvalarına özel olarak hazırlanmıştır en iyi sıralama kimin ise özel ödülleri olacaktır.',
+    'important-title': 'ÖNEMLİ',
+    'important-text-1': 'GÜNCELLEME YAPTIKTAN SONRA DIŞARI AKTAR DİYİP GELEN DOSYAYI LORDASTONGA VERİNİZ',
+    'important-text-2': 'DOSYA KAYIDI ALMAYI HİÇ UNUTMAYIN PUAN EKLERSENİZ BİLE KAYIT ALIN !!!!',
+  },
+  en: {
+    'lang': 'TR',
+    'site-title': 'S2SONSILAH',
+    'site-subtitle': 'D187: SIN STREETS',
+    'nav-home': 'Home',
+    'nav-rank': 'Clan Rankings',
+    'nav-match': 'Create Match',
+    'nav-news': 'News',
+    'nav-admin': 'Admin',
+    'home-title': 'WELCOME TO THE ARENA!',
+    'home-subtitle': 'Are you ready for adrenaline-filled battles? Download now and join the action!',
+    'download-btn': '🎮 DOWNLOAD GAME',
+    'discord-btn': '💬 JOIN DISCORD',
+    'announcements-title': '✨ANNOUNCEMENTS✨',
+    'announcements-1': '🔥NEW TOURNAMENT TIME: TO BE ANNOUNCED',
+    'announcements-2': '📰 News channel has been added, follow for the latest updates.',
+    'rankings-title': 'RANKINGS',
+    'clans-title': 'CLANS',
+    'login-title': 'Admin Login',
+    'login-btn': 'Login',
+    'admin-panel-title': 'Admin Panel',
+    'admin-tip-1': '• Add/remove clans, edit logo and player list.',
+    'admin-tip-2': '• Upload images to the map gallery, set active/inactive.',
+    'admin-tip-3': '• Edit the mod list.',
+    'admin-tip-4': '• In the Veto & Draw tab, process match results and add <strong>+3</strong> points to the winner.',
+    'admin-tip-5': '• For persistence, use <strong>Export JSON</strong> to backup, <strong>Import</strong> if needed.',
+    'news-main-title': '⚡ LATEST NEWS',
+    'news-main-desc': 'The latest developments, community achievements, surprise events and more are here!<br><span class="news-highlight" data-i18n="news-main-highlight">A new excitement every day, a new challenge every week!</span>',
+    'news-main-highlight': 'A new excitement every day, a new challenge every week!',
+    'footer-scroll-1': 'S2 Son Silah • Official Website of the Non-Profit Private Server Project',
+    'footer-scroll-2': 'Welcome to the official website created for the S2 Son Silah Private Server community! Here you will find:',
+    'footer-scroll-3': 'The latest updates and innovations',
+    'footer-scroll-4': 'Announcements about in-game events',
+    'footer-scroll-5': 'Community news and exclusive content',
+    'footer-scroll-6': 'Our mission is to enhance your S2 Son Silah experience and bring players together.',
+    'footer-copyright': '&copy; Lordastong 2025 S2 Son Silah website.',
+    'mods-title': 'Mods',
+    'mod-input-placeholder': 'Add mod (e.g. BO1)',
+    'add-mod-btn': 'Add',
+    'clear-mods-btn': 'Clear',
+    'info-title': 'Info',
+    'info-text': 'This site is specially prepared for S2 Son Silah clan tournaments. The top ranking will receive special rewards.',
+    'important-title': 'IMPORTANT',
+    'important-text-1': 'AFTER MAKING AN UPDATE, EXPORT THE FILE AND GIVE IT TO LORDASTONG.',
+    'important-text-2': 'NEVER FORGET TO SAVE THE FILE, EVEN IF YOU ONLY ADD POINTS!!!!',
+  }
+};
+
+let currentLang = 'tr';
+
+function updateLanguage() {
+  const t = translations[currentLang];
+  // Genel: data-i18n ile işaretli tüm elementleri çevir
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) {
+      // Eğer HTML içeriği varsa (ör. içinde <br> veya <span> varsa) innerHTML kullan
+      if (t[key].includes('<') || t[key].includes('&')) {
+        el.innerHTML = t[key];
+      } else {
+        el.textContent = t[key];
+      }
+    }
+  });
+  // Footer scrolling text (özel)
+  const scrollItems = document.querySelectorAll('.footer-scrolling-text .scrolling-item');
+  const scrollKeys = [
+    'footer-scroll-1', 'footer-scroll-2', 'footer-scroll-3', 'footer-scroll-4', 'footer-scroll-5', 'footer-scroll-6',
+    'footer-scroll-1', 'footer-scroll-2', 'footer-scroll-3', 'footer-scroll-4', 'footer-scroll-5', 'footer-scroll-6'
+  ];
+  scrollItems.forEach((el, i) => {
+    if (scrollKeys[i]) el.textContent = t[scrollKeys[i]];
+  });
+  // Footer copyright
+  const copyright = document.querySelector('.footer-bottom p');
+  if (copyright) copyright.innerHTML = t['footer-copyright'];
+  // Dil butonu
+  const langBtn = document.getElementById('lang-toggle');
+  if (langBtn) langBtn.textContent = t['lang'];
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  updateLanguage();
+  const langBtn = document.getElementById('lang-toggle');
+  if (langBtn) {
+    langBtn.addEventListener('click', function () {
+      currentLang = (currentLang === 'tr') ? 'en' : 'tr';
+      updateLanguage();
+    });
+  }
+});
+// === END LANGUAGE SWITCHER ===
+
 // Initialize app
 document.addEventListener('DOMContentLoaded', function() {
     initializeTabs();
