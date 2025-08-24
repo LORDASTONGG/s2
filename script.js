@@ -419,6 +419,13 @@ function initializeVeto() {
         if (vetoState.teamA && vetoState.teamB) {
             const teams = [vetoState.teamA, vetoState.teamB];
             vetoState.firstBanTeam = teams[Math.floor(Math.random() * teams.length)];
+            
+            // Show maps section after first ban is drawn
+            const mapsSection = document.getElementById('maps-section');
+            if (mapsSection) {
+                mapsSection.classList.remove('hidden');
+            }
+            
             updateVetoUI();
         }
     });
@@ -428,6 +435,7 @@ function initializeVeto() {
             const teams = [vetoState.teamA, vetoState.teamB];
             vetoState.sidePickerTeam = teams[Math.floor(Math.random() * teams.length)];
             updateVetoUI();
+            updateSidePickerResult();
         }
     });
 
@@ -437,12 +445,41 @@ function initializeVeto() {
     });
 
     copySummaryBtn.addEventListener('click', async () => {
-        const summary = generateMatchSummary();
+        console.log('Copy button clicked');
         try {
-            await navigator.clipboard.writeText(summary);
-            alert('Özet kopyalandı!');
+            console.log('Generating image...');
+            const canvas = await generateMatchSummaryImage();
+            console.log('Canvas created:', canvas);
+            
+            canvas.toBlob(async (blob) => {
+                console.log('Blob created:', blob);
+                try {
+                    if (navigator.clipboard && navigator.clipboard.write) {
+                        await navigator.clipboard.write([
+                            new ClipboardItem({ 'image/png': blob })
+                        ]);
+                        showNotification('Maç özeti resim olarak panoya kopyalandı!', 'success');
+                    } else {
+                        throw new Error('Clipboard API not supported');
+                    }
+                } catch (err) {
+                    console.error('Resim kopyalama hatası:', err);
+                    // Fallback to text
+                    const summary = generateMatchSummary();
+                    await navigator.clipboard.writeText(summary);
+                    showNotification('Maç özeti metin olarak kopyalandı!', 'success');
+                }
+            }, 'image/png');
         } catch (err) {
-            console.error('Kopyalama hatası:', err);
+            console.error('Resim oluşturma hatası:', err);
+            // Fallback to text
+            const summary = generateMatchSummary();
+            try {
+                await navigator.clipboard.writeText(summary);
+                showNotification('Maç özeti metin olarak kopyalandı!', 'success');
+            } catch (textErr) {
+                showNotification('Kopyalama başarısız!', 'error');
+            }
         }
     });
 
@@ -471,6 +508,18 @@ function resetVetoFlow() {
     vetoState.sidePickerTeam = "";
     vetoState.sideChoice = "";
     vetoState.winner = "";
+    
+    // Hide result boxes
+    const sidePickerResult = document.getElementById('side-picker-result');
+    if (sidePickerResult) {
+        sidePickerResult.classList.add('hidden');
+    }
+    
+    // Hide maps section until first ban is drawn
+    const mapsSection = document.getElementById('maps-section');
+    if (mapsSection) {
+        mapsSection.classList.add('hidden');
+    }
 }
 
 function updateVetoUI() {
@@ -640,15 +689,181 @@ function generateMatchSummary() {
         .join(", ");
 
     return [
-        `${EMOJI.loud} Maç Duyurusu`,
-        `${EMOJI.sword} Takımlar: ${teamAName} vs ${teamBName}`,
-        `${EMOJI.dice} Mod: ${vetoState.mode}`,
-        `${EMOJI.dice} İlk banlayacak takım (kura): ${firstBanName}`,
-        `${EMOJI.cross} Banlanan haritalar: ${bans || "-"}`,
-        `${EMOJI.map} Oynanacak harita: ${mapName}`,
-        `${EMOJI.dice} Taraf seçimi (kura): ${sidePickerName}`,
-        `${vetoState.sideChoice === "Saldırı" ? EMOJI.sword : EMOJI.shield} Seçilen taraf: ${vetoState.sideChoice}`,
+        `${EMOJI.loud} **Maç Duyurusu**`,
+        `${EMOJI.sword} **Takımlar:** ${teamAName} vs ${teamBName}`,
+        `${EMOJI.dice} **Mod:** ${vetoState.mode}`,
+        `${EMOJI.map} **Oynanacak harita:** ${mapName}`,
+        `${EMOJI.dice} **Taraf seçimi (kura):** ${sidePickerName}`,
+        `${vetoState.sideChoice === "Saldırı" ? EMOJI.sword : EMOJI.shield} **Seçilen taraf:** ${vetoState.sideChoice}`,
     ].join("\n");
+}
+
+// Show notification function
+function showNotification(message, type = 'info') {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `alert alert-${type === 'success' ? 'success' : type === 'error' ? 'danger' : 'info'}`;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        min-width: 300px;
+        padding: 15px;
+        border-radius: 5px;
+        animation: slideIn 0.3s ease-out;
+    `;
+    notification.textContent = message;
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease-in';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 3000);
+}
+
+// Generate match summary as image using Canvas
+function generateMatchSummaryImage() {
+    return new Promise((resolve) => {
+        console.log('Creating canvas...');
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Canvas dimensions
+        canvas.width = 700;
+        canvas.height = 450;
+        console.log('Canvas size set:', canvas.width, 'x', canvas.height);
+        
+        // Site color palette background gradient
+        const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        gradient.addColorStop(0, '#000000');
+        gradient.addColorStop(0.5, '#1f1f1f');
+        gradient.addColorStop(1, '#1b1b1b');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Border with site accent colors
+        const borderGradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        borderGradient.addColorStop(0, '#ef4444');
+        borderGradient.addColorStop(0.5, '#0ea5e9');
+        borderGradient.addColorStop(1, '#ef4444');
+        ctx.strokeStyle = borderGradient;
+        ctx.lineWidth = 4;
+        ctx.strokeRect(15, 15, canvas.width - 30, canvas.height - 30);
+        
+        // Inner shadow effect
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+        ctx.shadowBlur = 10;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 2;
+        
+        // Get data
+        const teamAName = clans.find(c => c.id === vetoState.teamA)?.name || "A";
+        const teamBName = clans.find(c => c.id === vetoState.teamB)?.name || "B";
+        const mapName = maps.find(m => m.id === vetoState.finalMap)?.name || "?";
+        const sidePickerName = vetoState.sidePickerTeam ? clans.find(c => c.id === vetoState.sidePickerTeam)?.name : "";
+        
+        console.log('Match data:', { teamAName, teamBName, mapName, sidePickerName });
+        
+        // Reset shadow for text
+        ctx.shadowColor = 'transparent';
+        ctx.shadowBlur = 0;
+        
+        // Text styling
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        
+        // Title with emoji
+        ctx.font = 'bold 32px Arial';
+        const titleGradient = ctx.createLinearGradient(0, 50, 0, 80);
+        titleGradient.addColorStop(0, '#ffffff');
+        titleGradient.addColorStop(1, '#e0e0e0');
+        ctx.fillStyle = titleGradient;
+        ctx.fillText('🔊 MAÇ DUYURUSU', canvas.width / 2, 70);
+        
+        // Teams with sword emoji and site colors
+        ctx.font = 'bold 28px Arial';
+        const teamGradient = ctx.createLinearGradient(0, 100, 0, 130);
+        teamGradient.addColorStop(0, '#ef4444');
+        teamGradient.addColorStop(1, '#dc2626');
+        ctx.fillStyle = teamGradient;
+        ctx.fillText(`⚔️ ${teamAName} vs ${teamBName}`, canvas.width / 2, 125);
+        
+        // Mode with dice emoji
+        ctx.font = '22px Arial';
+        ctx.fillStyle = '#e0e0e0';
+        ctx.fillText(`🎲 Mod: ${vetoState.mode}`, canvas.width / 2, 170);
+        
+        // Map with map emoji and gold color
+        ctx.font = 'bold 26px Arial';
+        const mapGradient = ctx.createLinearGradient(0, 200, 0, 230);
+        mapGradient.addColorStop(0, '#ffd700');
+        mapGradient.addColorStop(1, '#ffb300');
+        ctx.fillStyle = mapGradient;
+        ctx.fillText(`🗺️ Oynanacak harita: ${mapName}`, canvas.width / 2, 215);
+        
+        // Side picker with dice emoji and blue accent
+        ctx.font = '22px Arial';
+        const sideGradient = ctx.createLinearGradient(0, 250, 0, 280);
+        sideGradient.addColorStop(0, '#0ea5e9');
+        sideGradient.addColorStop(1, '#0284c7');
+        ctx.fillStyle = sideGradient;
+        ctx.fillText(`🎲 Taraf seçimi: ${sidePickerName}`, canvas.width / 2, 260);
+        
+        // Selected side with appropriate emoji
+        if (vetoState.sideChoice) {
+            ctx.font = 'bold 24px Arial';
+            const sideEmoji = vetoState.sideChoice === "Saldırı" ? "⚔️" : "🛡️";
+            const choiceGradient = ctx.createLinearGradient(0, 290, 0, 320);
+            if (vetoState.sideChoice === "Saldırı") {
+                choiceGradient.addColorStop(0, '#ef4444');
+                choiceGradient.addColorStop(1, '#dc2626');
+            } else {
+                choiceGradient.addColorStop(0, '#51cf66');
+                choiceGradient.addColorStop(1, '#37b24d');
+            }
+            ctx.fillStyle = choiceGradient;
+            ctx.fillText(`${sideEmoji} Seçilen taraf: ${vetoState.sideChoice}`, canvas.width / 2, 305);
+        }
+        
+        // Decorative line
+        const lineGradient = ctx.createLinearGradient(150, 350, 550, 350);
+        lineGradient.addColorStop(0, 'transparent');
+        lineGradient.addColorStop(0.5, 'rgba(255, 255, 255, 0.3)');
+        lineGradient.addColorStop(1, 'transparent');
+        ctx.strokeStyle = lineGradient;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(150, 350);
+        ctx.lineTo(550, 350);
+        ctx.stroke();
+        
+        // Footer with gaming emoji
+        ctx.font = '18px Arial';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+        ctx.fillText('🎮 S2 SON SİLAH TURNUVA🎮', canvas.width / 2, 390);
+        
+        // Date at the bottom
+        ctx.font = '14px Arial';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+        const currentDate = new Date().toLocaleDateString('tr-TR', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long'
+        });
+        ctx.fillText(`📅 ${currentDate}`, canvas.width / 2, 420);
+        
+        console.log('Canvas drawing completed');
+        resolve(canvas);
+    });
 }
 
 function updateStatusPanel() {
@@ -775,10 +990,14 @@ function renderEditClanPlayers(players) {
     container.innerHTML = '';
     
     players.forEach((player, index) => {
+        const playerObj = typeof player === 'string' ? {name: player, kills: 0, deaths: 0} : player;
         const playerDiv = document.createElement('div');
         playerDiv.className = 'player-item';
         playerDiv.innerHTML = `
-            <span>${player}</span>
+            <div class="player-info" onclick="editPlayerStats(${index})">
+                <span class="player-name">${playerObj.name}</span>
+                <span class="player-stats">K: ${playerObj.kills} D: ${playerObj.deaths} (${playerObj.kills - playerObj.deaths})</span>
+            </div>
             <button class="player-remove" onclick="removePlayerFromEdit(${index})">&times;</button>
         `;
         container.appendChild(playerDiv);
@@ -792,7 +1011,7 @@ function addPlayer() {
 
     const clan = clans.find(c => c.id === currentEditingClan);
     if (clan) {
-        clan.players.push(value);
+        clan.players.push({name: value, kills: 0, deaths: 0});
         renderEditClanPlayers(clan.players);
         input.value = '';
     }
@@ -904,6 +1123,7 @@ function render() {
     renderAdminMapGallery();
     renderModList();
     renderAdminControls();
+    renderPlayerRankings();
     updateVetoUI();
 }
 
@@ -924,7 +1144,7 @@ function renderRankings() {
             </div>
             <div class="ranking-info">
                 <div class="ranking-name">${clan.name}</div>
-                <div class="ranking-players">Oyuncular: ${clan.players.join(', ') || '-'}</div>
+                <div class="ranking-players">Oyuncular: ${clan.players.map(p => typeof p === 'string' ? p : p.name).join(', ') || '-'}</div>
             </div>
             <div class="ranking-points">${clan.points} puan</div>
         `;
@@ -949,7 +1169,7 @@ function renderClanGallery() {
                 <div class="clan-name">${clan.name}</div>
             </div>
             <div class="clan-players">
-                ${clan.players.map(player => `<div class="player-badge">${player}</div>`).join('')}
+                ${clan.players.map(player => `<div class="player-badge">${typeof player === 'string' ? player : player.name}</div>`).join('')}
             </div>
             <div class="clan-footer">
                 <div class="clan-points">Puan: <strong>${clan.points}</strong></div>
@@ -976,7 +1196,7 @@ function renderAdminClanGallery() {
                 <div class="clan-name">${clan.name}</div>
             </div>
             <div class="clan-players">
-                ${clan.players.map(player => `<div class="player-badge">${player}</div>`).join('')}
+                ${clan.players.map(player => `<div class="player-badge">${typeof player === 'string' ? player : player.name}</div>`).join('')}
             </div>
             <div class="clan-footer">
                 <div class="clan-points">Puan: <strong>${clan.points}</strong></div>
@@ -1082,6 +1302,108 @@ document.getElementById('edit-map-modal').addEventListener('click', (e) => {
         closeEditMapModal();
     }
 });
+
+// Player stats editing functions
+function editPlayerStats(playerIndex) {
+    const clan = clans.find(c => c.id === currentEditingClan);
+    if (!clan) return;
+    
+    const player = clan.players[playerIndex];
+    const playerObj = typeof player === 'string' ? {name: player, kills: 0, deaths: 0} : player;
+    
+    const kills = prompt(`${playerObj.name} - Kill sayısını girin:`, playerObj.kills);
+    const deaths = prompt(`${playerObj.name} - Death sayısını girin:`, playerObj.deaths);
+    
+    if (kills !== null && deaths !== null) {
+        clan.players[playerIndex] = {
+            name: playerObj.name,
+            kills: parseInt(kills) || 0,
+            deaths: parseInt(deaths) || 0
+        };
+        renderEditClanPlayers(clan.players);
+    }
+}
+
+// Player ranking functions
+function getAllPlayers() {
+    const allPlayers = [];
+    clans.forEach(clan => {
+        clan.players.forEach(player => {
+            const playerObj = typeof player === 'string' ? {name: player, kills: 0, deaths: 0} : player;
+            allPlayers.push({
+                ...playerObj,
+                clan: clan.name,
+                score: playerObj.kills - playerObj.deaths
+            });
+        });
+    });
+    return allPlayers.sort((a, b) => b.score - a.score);
+}
+
+function renderPlayerRankings() {
+    const tbody = document.getElementById('player-rankings-tbody');
+    if (!tbody) return;
+    
+    const players = getAllPlayers().slice(0, 50); // Top 50 players
+    
+    tbody.innerHTML = '';
+    
+    players.forEach((player, index) => {
+        const row = document.createElement('tr');
+        
+        // Add ranking colors for top 3
+        let rankClass = '';
+        if (index === 0) rankClass = 'rank-first';
+        else if (index === 1) rankClass = 'rank-second';
+        else if (index === 2) rankClass = 'rank-third';
+        else rankClass = 'rank-other';
+        
+        row.className = rankClass;
+        
+        const position = index === 0 ? '🏆 1' : index + 1;
+        
+        row.innerHTML = `
+            <td class="rank-position">${position}</td>
+            <td class="player-name" title="${player.clan}">${player.name}</td>
+            <td class="kills">${player.kills}</td>
+            <td class="deaths">${player.deaths}</td>
+            <td class="score">${player.score}</td>
+        `;
+        
+        tbody.appendChild(row);
+    });
+}
+
+function exportPlayerRankings() {
+    const players = getAllPlayers();
+    const data = {
+        exportDate: new Date().toISOString(),
+        totalPlayers: players.length,
+        players: players
+    };
+    
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `oyuncu-siralamasi-${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+// Side picker result function
+function updateSidePickerResult() {
+    const sidePickerResult = document.getElementById('side-picker-result');
+    const sidePickerTeamSpan = document.getElementById('side-picker-team');
+    
+    if (vetoState.sidePickerTeam) {
+        const teamName = clans.find(c => c.id === vetoState.sidePickerTeam)?.name || "?";
+        sidePickerTeamSpan.textContent = teamName;
+        sidePickerResult.classList.remove('hidden');
+    } else {
+        sidePickerResult.classList.add('hidden');
+    }
+}
 
 // Enter key for player input
 document.getElementById('new-player').addEventListener('keypress', (e) => {
