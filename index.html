@@ -161,7 +161,7 @@
                                     <div class="separator"></div>
 
                                     <!-- Maps -->
-                                    <div class="form-group">
+                                    <div id="maps-section" class="form-group hidden">
                                         <label data-i18n="maps-label">Haritalar</label>
                                         <div id="maps-grid" class="maps-grid"></div>
                                     </div>
@@ -172,6 +172,7 @@
                                             <h3 data-i18n="final-map-title">Harita Belirlendi</h3>
                                             <p data-i18n="final-map-result">Oynanacak harita: <strong id="final-map-name"></strong></p>
                                         </div>
+                                        
                                         <div class="form-grid">
                                             <button id="draw-side-picker" class="btn btn-primary" data-i18n="draw-side-picker-btn">🎲 Kura: Taraf Seçecek Takım</button>
                                             <select id="side-choice" class="select">
@@ -179,6 +180,12 @@
                                                 <option value="Saldırı" data-i18n="side-attack">Saldırı</option>
                                                 <option value="Savunma" data-i18n="side-defense">Savunma</option>
                                             </select>
+                                        </div>
+                                        
+                                        <!-- Side Picker Result -->
+                                        <div id="side-picker-result" class="alert alert-success hidden">
+                                            <h3 data-i18n="side-picker-title">Taraf Seçimi</h3>
+                                            <p data-i18n="side-picker-result">Kura sonucu: <strong id="side-picker-team"></strong> taraf seçecek.</p>
                                         </div>
                                     </div>
 
@@ -422,32 +429,58 @@
                 <!-- Ana Sayfa Tab -->
                 <div class="tab-content active" id="anasayfa-tab">
                     <div class="home-content">
-                        <div class="home-section">
-                            <h2 class="home-title" data-i18n="home-title">ARENA'YA HOSGELDIN!</h2>
-                            <p class="home-subtitle" data-i18n="home-subtitle">Adrenalin dolu savaşlara hazır mısın? Hemen indir ve aksiyona katıl!</p>
-                            
-                            <!-- Oyun görseli -->
-                            <div class="home-image-container">
-                                <img src="https://i.imgur.com/0F9TP2W.png" alt="Oyun Görseli" class="home-image">
-                            </div>
+                        <div class="home-main">
+                            <div class="home-section">
+                                <h2 class="home-title" data-i18n="home-title">ARENA'YA HOSGELDIN!</h2>
+                                <p class="home-subtitle" data-i18n="home-subtitle">Adrenalin dolu savaşlara hazır mısın? Hemen indir ve aksiyona katıl!</p>
+                                
+                                <!-- Oyun görseli -->
+                                <div class="home-image-container">
+                                    <img src="https://i.imgur.com/0F9TP2W.png" alt="Oyun Görseli" class="home-image">
+                                </div>
 
-                            <!-- İndirme Butonu -->
-                            <div class="home-buttons">
-                                <a href="https://drive.usercontent.google.com/download?id=1oTV7RO7XAXQxj4Q6HvFs3n4jjxQMHgHQ&export=download&authuser=0&confirm=t&uuid=2efbaa94-9585-491d-94f8-510c659b4e7e&at=AN8xHooXJi9kcEmjputtqZCAmKpo%3A1755882719566" class="home-btn primary" data-i18n="download-btn">
-                                    🎮 OYUNU İNDİR
-                                </a>
-                            </div>
+                                <!-- İndirme Butonu -->
+                                <div class="home-buttons">
+                                    <a href="https://drive.usercontent.google.com/download?id=1oTV7RO7XAXQxj4Q6HvFs3n4jjxQMHgHQ&export=download&authuser=0&confirm=t&uuid=2efbaa94-9585-491d-94f8-510c659b4e7e&at=AN8xHooXJi9kcEmjputtqZCAmKpo%3A1755882719566" class="home-btn primary" data-i18n="download-btn">
+                                        🎮 OYUNU İNDİR
+                                    </a>
+                                </div>
 
-                            <!-- Discord Görseli -->
-                            <div class="home-image-container">
-                                <img src="https://i.imgur.com/W4LwdkH.png" alt="Discord" class="home-image">
-                            </div>
+                                <!-- Discord Görseli -->
+                                <div class="home-image-container">
+                                    <img src="https://i.imgur.com/W4LwdkH.png" alt="Discord" class="home-image">
+                                </div>
 
-                            <!-- Discord Butonu -->
-                            <div class="home-buttons">
-                                <a href="https://discord.gg/Nd7KXYsnFM" class="home-btn secondary" data-i18n="discord-btn">
-                                    💬 DİSCORD'A KATIL
-                                </a>
+                                <!-- Discord Butonu -->
+                                <div class="home-buttons">
+                                    <a href="https://discord.gg/Nd7KXYsnFM" class="home-btn secondary" data-i18n="discord-btn">
+                                        💬 DİSCORD'A KATIL
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Player Rankings Sidebar -->
+                        <div class="home-sidebar">
+                            <div class="rankings-card">
+                                <div class="rankings-header">
+                                    <h3 class="rankings-title">🏆 OYUNCU SIRALAMASI</h3>
+                                </div>
+                                <div class="rankings-table-container">
+                                    <table class="rankings-table" id="player-rankings-table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Oyuncu</th>
+                                                <th>K</th>
+                                                <th>D</th>
+                                                <th>Skor</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="player-rankings-tbody">
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
