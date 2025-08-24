@@ -536,6 +536,94 @@ body {
     box-shadow: 0 12px 35px rgba(14, 165, 233, 0.6);
 }
 
+/* Download Button Image */
+.download-button-image {
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    filter: drop-shadow(0 0 15px rgba(139, 0, 0, 0.6)) drop-shadow(0 0 30px rgba(139, 0, 0, 0.3));
+}
+
+.download-button-image:hover {
+    transform: translateY(-3px) scale(1.02);
+    filter: drop-shadow(0 0 20px rgba(139, 0, 0, 0.8)) drop-shadow(0 0 40px rgba(139, 0, 0, 0.4));
+}
+
+/* Admin Login Image Container */
+.login-image-container {
+    background-image: url('https://i.imgur.com/MENJBqO.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 700px;
+    position: relative;
+    padding: 0;
+}
+
+.login-form-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.login-overlay-input {
+    position: absolute;
+    background: rgba(128, 128, 128, 0);
+    border: 1px solid rgba(128, 128, 128, 0);
+    color: #ffffff;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 4px;
+    outline: none;
+    width: 200px;
+}
+
+.login-overlay-input:focus {
+    background: rgba(128, 128, 128, 0);
+    border-color: rgba(128, 128, 128, 0);
+}
+
+.nickname-field {
+    top: 47%;
+    left: 36%;
+    transform: translateX(-25%);
+    width: 300px;
+}
+
+.password-field {
+    top: 54%;
+    left: 36%;
+    transform: translateX(-25%);
+    width: 300px;
+}
+
+.login-submit-button {
+    position: absolute;
+    top: 62%;
+    left: 60%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #252525, #2c2c2c);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-submit-button:hover {
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(66, 66, 66, 0.4);
+    background: linear-gradient(135deg, #252525, #2c2c2c);
+}
+
 /* News Styles */
 .news-hero {
     background: linear-gradient(135deg, #000000 0%, #1f1f1f 50%, #1b1b1b 100%);
@@ -1581,11 +1669,22 @@ label {
     background: linear-gradient(135deg, #000000 0%, #1f1f1f 50%, #1b1b1b 100%);
     border: 1px solid rgba(255, 255, 255, 0.3); /* White border */
     border-radius: 0.8rem;
-    width: 100%;
-    max-width: 550px; /* Slightly wider */
-    max-height: 90vh;
-    overflow-y: auto;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+}
+
+#login-modal .modal-content {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    width: auto;
+    max-width: none;
+    min-width: 800px;
+}
+
+#login-modal .modal-header {
+    background: transparent;
+    border: none;
+    padding: 0;
 }
 
 .modal-header {
