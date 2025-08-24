@@ -1,4 +1,272 @@
 /* Reset and Base Styles */
+
+/* Home Content Layout */
+.home-content {
+    display: flex;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.home-main {
+    flex: 1;
+}
+
+.home-sidebar {
+    width: 400px;
+    flex-shrink: 0;
+}
+
+/* Player Rankings Card */
+.rankings-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(31, 31, 31, 0.8) 50%, rgba(27, 27, 27, 0.8) 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.rankings-header {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(31, 31, 31, 0.9) 100%);
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.rankings-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.rankings-table-container {
+    max-height: 1500px;
+    overflow-y: auto;
+}
+
+.rankings-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    table-layout: fixed;
+}
+
+.rankings-table th {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(31, 31, 31, 0.8) 100%);
+    color: #e0e0e0;
+    font-weight: 600;
+    padding: 0.5rem 0.25rem;
+    text-align: center;
+    font-size: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.rankings-table th:nth-child(1) { width: 15%; }
+.rankings-table th:nth-child(2) { width: 45%; }
+.rankings-table th:nth-child(3) { width: 13%; }
+.rankings-table th:nth-child(4) { width: 13%; }
+.rankings-table th:nth-child(5) { width: 14%; }
+
+.rankings-table td {
+    padding: 0.4rem 0.25rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.rankings-table .player-name {
+    text-align: left;
+    min-width: 120px;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 0.5rem;
+}
+
+/* Ranking Colors */
+.rank-first {
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.3) 0%, rgba(220, 53, 69, 0.1) 100%);
+    color: #ff6b6b;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    border-left: 3px solid #dc3545;
+}
+
+.rank-second {
+    background: linear-gradient(135deg, rgba(13, 110, 253, 0.3) 0%, rgba(13, 110, 253, 0.1) 100%);
+    color: #4dabf7;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    border-left: 3px solid #0d6efd;
+}
+
+.rank-third {
+    background: linear-gradient(135deg, rgba(25, 135, 84, 0.3) 0%, rgba(25, 135, 84, 0.1) 100%);
+    color: #51cf66;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    border-left: 3px solid #198754;
+}
+
+.rank-other {
+    color: #e0e0e0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.rankings-table tr:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    transform: translateY(-1px);
+    transition: all 0.3s ease;
+}
+
+.rank-position {
+    font-weight: bold;
+    width: 35px;
+    text-align: center;
+}
+
+.kills {
+    color: #51cf66;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.deaths {
+    color: #ff6b6b;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.score {
+    font-weight: bold;
+    color: #ffd43b;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Player Item Styles for Editing */
+.player-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.player-info {
+    flex: 1;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.player-info:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.player-name {
+    font-weight: 600;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.player-stats {
+    font-size: 0.85rem;
+    color: #888;
+    display: block;
+}
+
+.player-remove {
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+}
+
+.player-remove:hover {
+    background: #d32f2f;
+}
+
+/* Button Styles */
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Notification animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .home-sidebar {
+        width: 100%;
+        order: -1;
+    }
+    
+    .rankings-table {
+        font-size: 0.75rem;
+    }
+    
+    .rankings-table th:nth-child(2) { width: 40%; }
+    
+    .rankings-table-container {
+        max-height: 300px;
+    }
+    
+    .rankings-table {
+        font-size: 0.75rem;
+    }
+    
+    .rankings-table th,
+    .rankings-table td {
+        padding: 0.3rem 0.2rem;
+    }
+}
 * {
     margin: 0;
     padding: 0;
@@ -782,7 +1050,7 @@ body {
     background: linear-gradient(135deg, #000000 0%, #1f1f1f 50%, #1b1b1b 100%);
     border: 1px solid rgba(255, 255, 255, 0.2); /* White border */
     border-radius: 0.5rem;
-    padding: 0.8rem; /* Slightly more padding */
+    padding: 0.75rem;
     color: #e0e0e0;
     font-size: 0.9rem;
 }
@@ -791,6 +1059,23 @@ body {
     outline: none;
     border-color: #0ea5e9; /* Blue focus */
     box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2); /* Soft blue shadow */
+}
+
+/* Select dropdown options styling */
+.select option {
+    background: #1f1f1f;
+    color: #e0e0e0;
+    padding: 0.5rem;
+    border: none;
+}
+
+.select option:hover {
+    background: #2f2f2f;
+}
+
+.select option:checked {
+    background: #0ea5e9;
+    color: #ffffff;
 }
 
 .input-group {
