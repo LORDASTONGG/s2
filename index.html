@@ -441,8 +441,8 @@
 
                                 <!-- İndirme Butonu -->
                                 <div class="home-buttons">
-                                    <a href="https://drive.usercontent.google.com/download?id=1oTV7RO7XAXQxj4Q6HvFs3n4jjxQMHgHQ&export=download&authuser=0&confirm=t&uuid=2efbaa94-9585-491d-94f8-510c659b4e7e&at=AN8xHooXJi9kcEmjputtqZCAmKpo%3A1755882719566" class="home-btn primary" data-i18n="download-btn">
-                                        🎮 OYUNU İNDİR
+                                    <a href="https://drive.usercontent.google.com/download?id=1oTV7RO7XAXQxj4Q6HvFs3n4jjxQMHgHQ&export=download&authuser=0&confirm=t&uuid=2efbaa94-9585-491d-94f8-510c659b4e7e&at=AN8xHooXJi9kcEmjputtqZCAmKpo%3A1755882719566" target="_blank">
+                                        <img src="https://i.imgur.com/a1QAqL6.png" alt="Oyunu İndir" class="download-button-image">
                                     </a>
                                 </div>
 
@@ -496,17 +496,12 @@
                 <h3 data-i18n="login-title">Admin Girişi</h3>
                 <button id="close-modal" class="close-btn">&times;</button>
             </div>
-            <div class="modal-body">
-                <p data-i18n="login-modal-content">İÇERİK DÜZENLEYEBİLİRSİN<strong>S2SONSİLAH</strong>LORDASTONG <strong>♥</strong></p>
-                <div class="form-group">
-                    <label for="login-nickname">Nickname</label>
-                    <input type="text" id="login-nickname" placeholder="gitgit" class="input">
+            <div class="modal-body login-image-container">
+                <div class="login-form-overlay">
+                    <input type="text" id="login-nickname" placeholder="" class="login-overlay-input nickname-field">
+                    <input type="password" id="login-password" placeholder="" class="login-overlay-input password-field">
+                    <button id="login-submit" class="login-submit-button">Giriş Yap</button>
                 </div>
-                <div class="form-group">
-                    <label for="login-password">Şifre</label>
-                    <input type="password" id="login-password" placeholder="••••••••" class="input">
-                </div>
-                <button id="login-submit" class="btn btn-primary full-width" data-i18n="login-btn">Giriş Yap</button>
             </div>
         </div>
     </div>
