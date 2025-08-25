@@ -34,6 +34,7 @@
                     <li><a href="#siralama" class="nav-link" data-tab="viewer" data-i18n="nav-rank">Klan Sıralaması</a></li>
                     <li><a href="#mac" class="nav-link" data-tab="veto" data-i18n="nav-match">Maç Oluştur</a></li>
                     <li><a href="#haberler" class="nav-link" data-tab="haberler" data-i18n="nav-news">Haberler</a></li>
+                    <li><a href="#haritalar" class="nav-link" data-tab="haritalar" data-i18n="nav-maps">Haritalar</a></li>
                     <li><a href="#admin" class="nav-link disabled" data-tab="admin" id="admin-nav-link" disabled data-i18n="nav-admin">Admin</a></li>
                 </ul>
             </nav>
@@ -317,7 +318,7 @@
                         <!-- Maps Management -->
                         <div class="card">
                             <div class="card-header">
-                                <h2 class="card-title">🗺️ Haritalar</h2>
+                                <h2 class="card-title">Haritalar</h2>
                             </div>
                             <div class="card-content">
                                 <div id="admin-controls-maps" class="admin-controls-section hidden">
@@ -426,6 +427,271 @@
                     </section>
                 </div>
 
+                <!-- Haritalar Tab -->
+                <div class="tab-content" id="haritalar-tab">
+                    <div class="maps-page">
+                        <div class="maps-hero">
+                            <h1 class="maps-title" data-i18n="maps-page-title">HARITALAR</h1>
+                            <p class="maps-subtitle" data-i18n="maps-page-subtitle">S2 Son Silah'ta savaşacağın efsanevi haritalar ve hikayeleri</p>
+                        </div>
+                        
+                        <div class="maps-list">
+                            <!-- 1. Ölüm Limanı -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/DVOoIer.jpeg" alt="Ölüm Limanı" class="map-image map-image-contain">
+                                <h3 class="map-title">ÖLÜM LIMANI</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Ölüm Oyunu</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-1-story">Özel tim ekibi, Çetelerin terk edilmiş bir depoda silah kaçakçılığı yaptığı bilgisini alır ve depoyu dört bir yandan kuşatırlar. Tüm silahların ele geçirilmesi, gangsterlerin planlarını alt üst edecektir. Öte yandan çeteler de bu operasyona hazırlıksız yakalanmayacaktır.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 2. Eski Şehir -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/tZ7OrmH.jpeg" alt="Eski Şehir" class="map-image map-image-contain">
+                                <h3 class="map-title">ESKI SEHIR</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Ölüm Oyunu</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-2-story">Önemli devlet adamları ile önde gelen yatırımcılar küçük bir köyün yakınlarında yer alan ufak bir hava alanının muhitini turistik bölgeye dönüştürme projesini görüşmek amacıyla toplanırlar. Politikanın ve ekonominin en önemli isimlerinin katılacağı bu toplantı hakkında bilgi edinen çeteler suikast düzenleme amacıyla bölgede konuşlanır. Toplantı başlar fakat iki tarafın da kaybedecek çok şeyi vardır.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 3. Hospital -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/wsYBmhR.jpeg" alt="Hospital" class="map-image map-image-contain">
+                                <h3 class="map-title">HASTANE</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Ölüm Oyunu</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-3-story">Şehrin ıssız bir bölgesinde yer alan terk edilmiş bir hastane. Silahlı çete üyeleri çok özel bir görev için burayı ele geçirmiş durumda. Görevin amacı ölü bir çete liderinin vücuduna gizlenmiş paha biçilemez mücevheri cesetten çıkartmak. Bu kirli operasyonun ortasında Özel Tim birlikleri hastaneyi kuşatıp ani bir saldırı düzenler ve etraf bir anda savaş alanine döner. Mücevheri ele geçiren çete üyelerinin önündeki tek engel, Özel Timin kapadığı yolu açıp oradan tüymektir.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 4. Eski Şehir (Gece) -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/O2RaEjG.jpeg" alt="Eski Şehir (Gece)" class="map-image map-image-contain">
+                                <h3 class="map-title">ESKI SEHIR (GECE)</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Ölüm Oyunu</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-4-story">Bir kaç el ateşle başlayan çatışma, huzur dolu kasabayı tam bir savaş alanına çevirmiştir. Özel tim ekiplerinden kaçan çeteler köşeye sıkışmış, umutsuzca kasabayı ateşe vermeye başlamışlardır. Özel tim ekipleri düşmanları ortadan kaldırmayı amaçlarken, çeteler de peşlerindeki ekiplerden kurtulup olay yerini terk etmeye çalışmaktadır.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 5. Beyaz Gece -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/oKYzamZ.jpeg" alt="Beyaz Gece"  class="map-image map-image-contain">
+                                <h3 class="map-title">BEYAZ GECE</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Ölüm Oyunu</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-5-story">Küçük bir şehir kasabasında Çete üyelerinin toplantı yapacağı istihbaratını alan Özel Tim üyeleri toplantının gece geç vakitlere kadar süreceğini bildiğinden geç saatlerde bir baskın düzenler. Ormanlık alanda ve soğuk hava şartlarının zorluğu sebebiyle Çete üyeleri de bu baskına kaçmak yerine karşı ateş ile cevap verir.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 6. Hayalet Gemi -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/j3IDTje.jpeg" alt="Hayalet Gemi"  class="map-image map-image-contain">
+                                <h3 class="map-title">HAYALET GEMI</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Ölüm Oyunu</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-6-story">Çetelerinin pek çoğu refah ve güçlerini korumak adına, silah ve uyuşturucu kaçakçılığı gibi en kanunsuz işlere karışmaya cesaret eder olmuştur. Özel Tim'in aldığı bilgiye göre birkaç gangster çetesi tehlikeli silahların kaçakçılığını yapmak için eski bir gemiyi kullanmaktadır. Görevleri gemiye sızmak ve gangsterleri durdurmak olan ekipler işe koyulur. Fakat durumdan haberdar olan çeteler, ekipleri tuzağa düşürürler. Özel tim ekipleri okyanusun ortasında, eski bir gemide çaresizce düşmanla çatışmaya girmek zorunda kalırlar.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 7. Şanzelize -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/0v3isYx.jpeg" alt="Şanzelize"  class="map-image map-image-contain">
+                                <h3 class="map-title">SANZELIZE</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Ölüm Oyunu: Bıçak</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-7-story">Çete üyelerinin bir gece kulübü sahibiyle görülecek işlerinin olduğu istihbaratını alan Özel Tim ekipleri kulübe doğru yola çıkar. Özel Tim için bu kaçırılmaması gereken bir fırsattır Kulübün etrafı sarılır. Klüpteki ışık ve müzik curcunası arasında çevredeki sivillere zarar gelmemesi açısından ekipler ateşli silah ve patlayıcıları bırakmak zorunda kalmıştır. Pist ışıkları ve müzik eşliğinde verilen bu savaşı bakalım kim kazanacak?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 8. Su Altı -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/Vt4Upgr.jpeg" alt="Su Altı"  class="map-image map-image-contain">
+                                <h3 class="map-title">SU ALTI</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Ölüm Oyunu: Bıçak</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-8-story">Çetelerin mali işlerini tutan bir elemanın telsiz konuşmalarını dinleyen Özel tim ekipleri elemanı eski atık işleme reaktöründe sıkıştırırlar. Fakat reaktör yanıcı, patlayıcı gazla doludur. Bomba ve ateşli silahların kullanılması büyük tehlike arz edeceğinden düşmanlar birbirlerini başka yollarla halletmelidir.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 9. Kapalıçarşı -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/9mw3P1y.jpeg" alt="Kapalıçarşı"  class="map-image map-image-contain">
+                                <h3 class="map-title">KAPALI CARSI</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Ölüm Oyunu</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-9-story">Uzun süredir bir vurgunun peşinde koşan Juan'ın Çetesi, bu kez gözünü Kapalı Çarşı'ya dikmişti. Kapalıçarşı'nın esrarengiz yüzünü de kullanarak gizli bir plan yapan Juan büyük vurgun için gün saymaya başlamıştı. Harika plan ile Kapalı Çarşı'daki tüm dükkanları yağmalayıp kimsenin ruhu duymadan "logar kapağını" patlatıp şehrin altından kaçacaklardı. Ancak diğer tarafta Özel Tim Liderlerinden Ivan, muhbirleri sayesinde, Juan'ın bu planından haberi olur. Ivan'ın her zaman söylediği söz yine gerçek olmuştu: "O çete üyeleri her zaman birbirlerini satar..." Gece büyük vurgunu tamamlamak için buluşan Juan ve Çetesi, Kapalıçarşı'nın Kubbelerine tırmanarak burada ortalığın iyice sakinleşmesini beklerler. Sabaha karşı içeride bulunan zincirli bölgelerden içeri giren Çete amacına çok yakındır... Ancak bu durum Ivan'ın Özel Timler ile birlikte Kapalı Çarşı'yı kuşatmasına kadar sürdü... Daha sonra uzun süren çatışmalar başladı...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 10. Kum Fırtınası -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/9xpVg6i.jpeg" alt="Kum Fırtınası"  class="map-image map-image-contain">
+                                <h3 class="map-title">KUM FIRTINASI</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Ölüm Oyunu</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-10-story">Kanunsuz işlerle kazandıkları pis malların teslimatı için terkedilmiş bir bölge seçen Çete Üyeleri, Özel Tim tarafından köşeye sıkıştırılmıştır. Çete üyeleri bir yandan uzun süredir topladıkları bu malları kaybetmemek bir yandan da arkada bir yerde gizli bir yol bulmak ve zaman kazanmak için çatışmaya girerler.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 11. Malikane -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/eXxpK5y.jpeg" alt="Cennet"  class="map-image map-image-contain">
+                                <h3 class="map-title">MALIKANE</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Bomba Modu</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-11-story">Özel Tim, dağlar arasında bulunan Cennet isimli ufak bir kasabada Çete üyelerinin silah temin ettiğine dair duyumlar alır. Dört tarafı dağlarla çevrili bu sakin ve barışçıl kasaba, bu özelliğinden dolayı dış dünyanın ilgisini çekmeyecek bir mekandır. Yapılan araştırmalar sonucu Özel Tim, kasabanın Çete üyelerinin ini olduğunu öğrenir. Çeşitli patlayıcılar başta olmak üzere pek çok silahın saklandığı kasabaya normal yollardan giriş imkansızdır. Akşam saatlerinde tenha bir köşedeki duvarı imha ederek kasabaya sızan Tim'in amacı Çete silahlarını ele geçirip yok etmektir.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 12. Ölüm Merkezi -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/Ku0QCoS.jpeg" alt="Ölüm Merkezi"  class="map-image map-image-contain">
+                                <h3 class="map-title">ÖLÜM MERKEZI</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Bomba Modu</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-12-story">Arka sokaklarda Çetenin hüküm sürdüğü bölgelere rutin baskınlardan birini yapan Özel Tim durumun ciddiyetini farkedememiştir. Çete üyeleri Özel Tim'i kuracakları C4 bombalarla bozguna uğratmak istemektedir.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 13. Çifte Yol (Gece) -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/1wvWdCa.jpeg" alt="Çifte Yol (Gece)"  class="map-image map-image-contain"> 
+                                <h3 class="map-title">CIFTE YOL (GECE)</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Yok Etme</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-13-story">Çete Üyelerinin eylemleri giderek daha da büyümeye başlar. Bu yüzden Özel Tim ekipleri saha operasyonlarını genişletir. Çete üyeleri, operasyonlar yüzünden geri adım atmak zorunda kalırlar. Can havliyle Özel Tim ekiplerini eski bir petrol rafinerisinin konuşlandığı bir yerleşim merkezine çeken çete üyeleri, C4 patlayıcı ile rafineyi havaya uçurup tüm SWAT ekiplerinden kurtulmayı planlamaktadırlar. Fakat yılların tecrübeli Özel Tim ekibi bu tuzağa düşmeyecek kadar zekidir.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 14. Çifte Yol -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/kEaKKV6.jpeg" alt="Çifte Yol"  class="map-image map-image-contain">
+                                <h3 class="map-title">CIFTE YOL</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Yok Etme</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-14-story">Çetelerin eylemleri giderek daha da büyümeye başlar. Bu yüzden Özel tim ekipleri saha operasyonlarını genişletir. Can havliyle Özel tim ekiplerini eski bir petrol rafinerisin konuşlandığı bir yerleşim merkezine çeken gangster çetesi C4 patlayıcı ile rafineyi havaya uçurup tüm Özel tim ekiplerinden kurtulmayı planlamaktadırlar. Fakat yılların tecrübeli Özel tim ekibi bu tuzağa düşmeyecek kadar zekidir.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 15. Hayalet Şehir -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/7lrkHce.jpeg" alt="Hayalet Şehir"  class="map-image map-image-contain">
+                                <h3 class="map-title">HAYALET SEHIR</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Yok Etme</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-15-story">Özel tim ekipleri büyük bir uyuşturucu ağına ilişkin istihbarat alır bu ağın kökünü kazımak için operasyona başlarlar. Malın saklandığı depoya doğru harekete geçen ekipleri gangster çeteleri karşılar.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 16. Tepelerde Av -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/UHfswFV.jpeg" alt="Tepelerde Av"  class="map-image map-image-contain">
+                                <h3 class="map-title">ISSIZ TEPE</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Raundlu Maç</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-16-story">Çetelerin en önemli liderlerinden birinin bir dağ köyünde saklandığı istihbaratını alan ekipler köyün çevresini kuşatarak herkesi sorguya almaya başlar. Aramaların sonuna yaklaşılırken çeteler Özel tim ekiplerine karşı saldırıya geçer.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 17. Savaş Lordu -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/GGJcOZZ.jpeg" alt="Savaş Lordu"  class="map-image map-image-contain">
+                                <h3 class="map-title">SAVAS LORDU</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Raundlu Maç</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-17-story">Çetelerin mali işlerini tutan bir elemanın telsiz konuşmalarını dinleyen Özel tim ekipleri elemanı kanalizasyon tünellerinde takip ederler. Fakat iyice derinlere inen ekipler sonu olmayan tünellerde kapana sıkışır. Bakalım ekipler gangsterlerin bu tuzağından canlı çıkabilecekler mi?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 18. Banka -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/HhEj2W6.jpeg" alt="Banka"  class="map-image map-image-contain">
+                                <h3 class="map-title">BANKA</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Mücadele</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-18-story">Belediye tarafından şehir geri dönüşüm çalışmaları sonucu eski binaları yenilemeye başlanır. İşçilerden birisi gangsterlerin kullandığı eski bir binada yüklü miktarda para bulur. Paralarını işçilerden geri almak için binayı kuşatan gangster çetesinin hemen ardından olay yerine Özel tim ekipleri de teşrif etmişlerdir.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 19. Kayıp Topraklar -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/ysYuf5K.jpeg" alt="Kayıp Topraklar"  class="map-image map-image-contain">
+                                <h3 class="map-title">KAYIP TOPRAKLAR</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Bomba Modu</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-19-story">Gangsterler, şehrin bir bölümünün elektriklerinin sağlandığı büyük makinaları imha etmek ve halka korku salmak için harekete geçerler. Bunun istihbaratını alan Özel Tim ekipleri de olaya müdahale etmek için harekete geçerler.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 20. Plaza -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/zGJ1vjQ.jpeg" alt="Plaza"  class="map-image map-image-contain">
+                                <h3 class="map-title">PLAZA</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Keskin Nişan Modu</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-20-story">Ekonominin kalbinin attığı plazalar muhitinde çok önemli bir finans firmasının gökdelenini ele geçiren gangster çeteleri, gökdeleni yerle bir ederek ekonomiye darbe indirmek ve yarattıkları kaosla binadan kaçmak istemişlerdir. Fakat SWAT ekipleri yıkımı engelleyerek çeteleri gökdelende sıkıştırmışlardır. Kaçacak yerleri olmayan gangsterler direnişe geçer. Gökdelene tam olarak giriş yapamayan SWAT ekipleri çevreye keskin nişancılar yerleştirerek düşmanı alt etmeye çalışır. Her bir silah sesinde birinin yere yığıldı bu karmaşa ortamında bakalım en son kim hayatta kalacaktır?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- 21. Şaşkınlar Evi -->
+                            <div class="map-section">
+                                <img src="https://i.imgur.com/7CAi4iY.jpeg" alt="INSAAT"  class="map-image map-image-contain">
+                                <h3 class="map-title">SASKINLAR EVI</h3>
+                                <div class="map-details">
+                                    <p class="map-description">Ölüm Oyunu</p>
+                                    <div class="map-story">
+                                        <p data-i18n="map-21-story">Zengin ve Fakir insanların arasında ki fark genişliyorken, insanlar yaşamak için Çete Üyelerine katılıyorlardı. Bu kalabalıklaşma Çete Üyelerinin organizasyon yapmalarını zorlaştırıyordu. Sığınak yerlerinin bazıları hariç çoğu S.W.A.T gözetimi altındaydı. Bu yüzden Çete Üyeleri cesurca özel bir tesis kılığında depoları ve özel mekanları yeniden organize ederek karargahlarına katmaya karar verdiler. Yapılanma planı iyi gidiyor gibi görünüyordu. Yarı zamanlı hükümetin izni ile çalışan bir işçinin gizli silah ve malzemeleri bulup Özel Tim'e haber vermesiyle her şey değişti. Özel Tim bölgede neler olduğunu araştırmak için bir Silahlı ekip göndermeye karar verir ve Çete Üyeleriyle aralarında büyük bir çatışma çıkacaktır.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Ana Sayfa Tab -->
                 <div class="tab-content active" id="anasayfa-tab">
                     <div class="home-content">
@@ -473,7 +739,7 @@
                         <div class="home-sidebar">
                             <div class="rankings-card">
                                 <div class="rankings-header">
-                                    <h3 class="rankings-title">🏆 OYUNCU SIRALAMASI</h3>
+                                    <h3 class="rankings-title">🏆 OYUNCU SIRALAMASI - PLAYER RANKINGS</h3>
                                 </div>
                                 <div class="rankings-table-container">
                                     <table class="rankings-table" id="player-rankings-table">
