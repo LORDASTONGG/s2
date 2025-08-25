@@ -487,6 +487,13 @@ body {
     margin-bottom: 3rem;
 }
 
+
+.discord-yazi {
+    font-size: 1.3rem;
+    color: #a0a0b0;
+    margin-bottom: 3rem;
+}
+
 .home-image-container {
     margin: 3rem 0;
 }
@@ -554,6 +561,22 @@ body {
 .download-button-image:hover {
     transform: translateY(-3px) scale(1.02);
     filter: drop-shadow(0 0 20px rgba(139, 0, 0, 0.8)) drop-shadow(0 0 40px rgba(139, 0, 0, 0.4));
+}
+
+
+
+.discord-b-image {
+    max-width: 180px;
+    height: auto;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    filter: drop-shadow(0 0 15px rgba(5, 19, 99, 0.6)) drop-shadow(0 0 30px rgba(5, 7, 114, 0.3));
+}
+
+.discord-b-image:hover {
+    transform: translateY(-3px) scale(1.02);
+    filter: drop-shadow(0 0 20px rgba(7, 17, 99, 0.8)) drop-shadow(0 0 40px rgba(5, 8, 160, 0.4));
 }
 
 /* Admin Login Image Container */
