@@ -7,6 +7,7 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 2rem;
+    margin-top: 160px;
 }
 
 .home-main {
@@ -297,17 +298,18 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 1.2rem 0;
 }
 
 .header-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1rem;
+    flex-wrap: nowrap;
 }
 
 .header-left {
@@ -333,7 +335,7 @@ body {
 
 .site-title {
     font-family: 'Orbitron', monospace;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 900;
     color: #ffffff;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
@@ -341,7 +343,7 @@ body {
 }
 
 .site-subtitle {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #ff0000;
     font-weight: 500;
     letter-spacing: 2px;
@@ -360,19 +362,22 @@ body {
     gap: 0;
     background: linear-gradient(135deg, #000000 0%, #1f1f1f 50%, #1b1b1b 100%);
     border-radius: 50px;
-    padding: 0.25rem;
+    padding: 0.5rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    flex-wrap: nowrap;
+    white-space: nowrap;
 }
 
 .nav-link {
     display: block;
-    padding: 0.75rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     color: #a0a0b0;
     text-decoration: none;
     border-radius: 25px;
     transition: all 0.3s ease;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -430,8 +435,8 @@ body {
 }
 
 .social-btn {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -449,15 +454,15 @@ body {
 }
 
 .social-btn img {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 }
 
 
 
 /* Home Page Styles */
 .home-content {
-    margin-top: 140px;
+    margin-top: 160px;
     padding: 2rem 0;
 }
 
@@ -630,7 +635,7 @@ body {
     border-radius: 32px;
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
     padding: 3rem 2rem;
-    margin-top: 140px;
+    margin-top: 160px;
     margin-bottom: 3rem;
     display: flex;
     flex-wrap: wrap;
@@ -815,6 +820,114 @@ body {
     text-align: center;
 }
 
+/* Maps Page Styles */
+.maps-page {
+    margin-top: 160px;
+    padding: 2rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.maps-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.maps-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+.maps-subtitle {
+    font-size: 1.2rem;
+    color: #a0a0b0;
+    margin-bottom: 2rem;
+}
+
+.maps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.map-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.map-image {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.map-image:hover {
+    transform: scale(1.02);
+}
+
+.map-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.map-description {
+    color: #e0e0e0;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Responsive Design for Maps */
+@media (max-width: 768px) {
+    .maps-page {
+        padding: 1rem;
+        margin-top: 280px;
+    }
+    
+    .maps-title {
+        font-size: 2rem;
+    }
+    
+    .maps-list {
+        gap: 3rem;
+        max-width: 100%;
+    }
+    
+    .map-image {
+        height: 250px;
+    }
+    
+    .map-title {
+        font-size: 1.8rem;
+    }
+    
+    .map-description {
+        font-size: 1rem;
+    }
+}
+
 /* Admin Controls */
 .admin-controls {
     display: flex;
@@ -940,7 +1053,7 @@ body {
 .main-content {
     max-width: 1400px;
     margin: 0 auto;
-    margin-top: 140px;
+    margin-top: 160px;
     padding: 0 2rem;
 }
 
@@ -1485,22 +1598,203 @@ label {
     opacity: 0.7;
 }
 
+/* haritalar sayfası */
+.maps-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.maps-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.maps-title {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.maps-subtitle {
+    color: #aaa;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.map-section {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.map-image {
+    width: 100%;
+    height: auto;            /* allow natural aspect ratio */
+    object-fit: contain;     /* no cropping */
+    object-position: center;
+    background: transparent; /* blend with card background */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Only for specific images that must not be cropped (e.g., Ölüm Limanı) */
+.map-image.map-image-contain {
+    object-fit: contain;
+    object-position: center;
+    height: auto;            /* allow natural height to avoid any bars */
+    background: transparent; /* blend with card background */
+}
+
+.map-title {
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 1rem 1.5rem 0.5rem;
+    margin: 0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.map-details {
+    padding: 0 1.5rem 1.5rem;
+}
+
+.map-description {
+    color: #4dabf7;
+    font-weight: 500;
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.map-story {
+    color: #ddd;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
 .map-card.inactive {
     background: rgba(30, 30, 47, 0.2);
     opacity: 0.7;
 }
 
+/* Map Sections */
+.maps-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.map-section {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(31, 31, 31, 0.9) 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.map-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 5px 5px rgba(255, 255, 255, 0.76);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
 .map-image {
-    aspect-ratio: 16/9;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-title {
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-details {
+    padding: 1.5rem;
+}
+
+.map-description {
+    color: #ff6b6b;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.map-story {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.map-story p {
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .maps-list {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .map-section {
+        margin-bottom: 1rem;
+    }
+    
+    .map-title {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    
+    .map-details {
+        padding: 1.2rem;
+    }
+    
+    .map-story {
+        padding: 0.8rem;
+    }
+    
+    .map-story h4 {
+        font-size: 1rem;
+    }
+}
+
+/* Map Card Styles (for match creation) */
+.map-card .map-image {
+    width: 100%;
+    height: 140px;
     background: linear-gradient(135deg, #000000 0%, #1f1f1f 50%, #1b1b1b 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #888899;
     overflow: hidden;
+    border-radius: 8px;
 }
 
-.map-image img {
+.map-card .map-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1803,32 +2097,64 @@ label {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .site-header {
+        padding: 1rem 0;
+    }
+
     .header-container {
+        padding: 0 0.5rem;
+        gap: 0.5rem;
         flex-direction: column;
-        gap: 1rem;
-        padding: 0 1rem;
+    }
+
+    .header-left {
+        width: 100%;
+        justify-content: center;
     }
 
     .header-nav {
-        order: 3;
         width: 100%;
+        margin-top: 1rem;
     }
 
-    .nav-list {
-        justify-content: center;
-        flex-wrap: wrap;
+    .header-logo {
+        width: 70px;
+        height: 70px;
     }
 
-    .nav-link {
-        padding: 0.5rem 1rem;
+    .site-title {
+        font-size: 1.2rem;
+    }
+
+    .site-subtitle {
         font-size: 0.8rem;
     }
 
+    .nav-list {
+        padding: 0.3rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
+    .nav-link {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .social-buttons {
+        margin-top: 1rem;
+        justify-content: center;
+    }
 
     .home-content {
-        margin-top: 220px;
+        margin-top: 280px;
         padding: 1rem;
+        flex-direction: column;
+    }
+
+    .home-sidebar {
+        width: 100%;
+        margin-top: 2rem;
     }
 
     .home-title {
@@ -1836,7 +2162,7 @@ label {
     }
 
     .news-hero {
-        margin-top: 220px;
+        margin-top: 280px;
         flex-direction: column;
         text-align: center;
         padding: 2rem 1rem;
@@ -1861,13 +2187,12 @@ label {
     .news-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-        margin-top: 220px;
+        margin-top: 280px;
     }
     
 
-
     .main-content {
-        margin-top: 220px;
+        margin-top: 280px;
         padding: 0 1rem;
     }
 
