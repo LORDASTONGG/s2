@@ -97,7 +97,10 @@ const translations = {
     'nav-rank': 'Klan Sıralaması',
     'nav-match': 'Maç Oluştur',
     'nav-news': 'Haberler',
+    'nav-maps': 'Haritalar',
     'nav-admin': 'Admin',
+    'maps-page-title': 'HARITALAR',
+    'maps-page-subtitle': 'S2 Son Silah\'ta savaşacağın efsanevi haritalar ve hikayeleri',
     'home-title': "ARENA'YA HOSGELDIN!",
     'home-subtitle': 'Adrenalin dolu savaşlara hazır mısın? Hemen indir ve aksiyona katıl!',
     'download-btn': '🎮 OYUNU İNDİR',
@@ -134,6 +137,29 @@ const translations = {
     'important-title': 'ÖNEMLİ',
     'important-text-1': 'GÜNCELLEME YAPTIKTAN SONRA DIŞARI AKTAR DİYİP GELEN DOSYAYI LORDASTONGA VERİNİZ',
     'important-text-2': 'DOSYA KAYIDI ALMAYI HİÇ UNUTMAYIN PUAN EKLERSENİZ BİLE KAYIT ALIN !!!!',
+  
+    // Map stories (TR)
+    'map-1-story': 'Özel tim ekibi, Çetelerin terk edilmiş bir depoda silah kaçakçılığı yaptığı bilgisini alır ve depoyu dört bir yandan kuşatırlar. Tüm silahların ele geçirilmesi, gangsterlerin planlarını alt üst edecektir. Öte yandan çeteler de bu operasyona hazırlıksız yakalanmayacaktır.',
+    'map-2-story': 'Önemli devlet adamları ile önde gelen yatırımcılar küçük bir köyün yakınlarında yer alan ufak bir hava alanının muhitini turistik bölgeye dönüştürme projesini görüşmek amacıyla toplanırlar. Politikanın ve ekonominin en önemli isimlerinin katılacağı bu toplantı hakkında bilgi edinen çeteler suikast düzenleme amacıyla bölgede konuşlanır. Toplantı başlar fakat iki tarafın da kaybedecek çok şeyi vardır.',
+    'map-3-story': 'Şehrin ıssız bir bölgesinde yer alan terk edilmiş bir hastane. Silahlı çete üyeleri çok özel bir görev için burayı ele geçirmiş durumda. Görevin amacı ölü bir çete liderinin vücuduna gizlenmiş paha biçilemez mücevheri cesetten çıkartmak. Bu kirli operasyonun ortasında Özel Tim birlikleri hastaneyi kuşatıp ani bir saldırı düzenler ve etraf bir anda savaş alanine döner. Mücevheri ele geçiren çete üyelerinin önündeki tek engel, Özel Timin kapadığı yolu açıp oradan tüymektir.',
+    'map-4-story': 'Bir kaç el ateşle başlayan çatışma, huzur dolu kasabayı tam bir savaş alanına çevirmiştir. Özel tim ekiplerinden kaçan çeteler köşeye sıkışmış, umutsuzca kasabayı ateşe vermeye başlamışlardır. Özel tim ekipleri düşmanları ortadan kaldırmayı amaçlarken, çeteler de peşlerindeki ekiplerden kurtulup olay yerini terk etmeye çalışmaktadırlar.',
+    'map-5-story': 'Küçük bir şehir kasabasında Çete üyelerinin toplantı yapacağı istihbaratını alan Özel Tim üyeleri toplantının gece geç vakitlere kadar süreceğini bildiğinden geç saatlerde bir baskın düzenler. Ormanlık alanda ve soğuk hava şartlarının zorluğu sebebiyle Çete üyeleri de bu baskına kaçmak yerine karşı ateş ile cevap verir.',
+    'map-6-story': 'Çetelerinin pek çoğu refah ve güçlerini korumak adına, silah ve uyuşturucu kaçakçılığı gibi en kanunsuz işlere karışmaya cesaret eder olmuştur. Özel Tim\'in aldığı bilgiye göre birkaç gangster çetesi tehlikeli silahların kaçakçılığını yapmak için eski bir gemiyi kullanmaktadır. Görevleri gemiye sızmak ve gangsterleri durdurmak olan ekipler işe koyulur. Fakat durumdan haberdar olan çeteler, ekipleri tuzağa düşürürler. Özel tim ekipleri okyanusun ortasında, eski bir gemide çaresizce düşmanla çatışmaya girmek zorunda kalırlar.',
+    'map-7-story': 'Çete üyelerinin bir gece kulübü sahibiyle görülecek işlerinin olduğu istihbaratını alan Özel Tim ekipleri kulübe doğru yola çıkar. Özel Tim için bu kaçırılmaması gereken bir fırsattır Kulübün etrafı sarılır. Klüpteki ışık ve müzik curcunası arasında çevredeki sivillere zarar gelmemesi açısından ekipler ateşli silah ve patlayıcıları bırakmak zorunda kalmıştır. Pist ışıkları ve müzik eşliğinde verilen bu savaşı bakalım kim kazanacak?',
+    'map-8-story': 'Çetelerin mali işlerini tutan bir elemanın telsiz konuşmalarını dinleyen Özel tim ekipleri elemanı eski atık işleme reaktöründe sıkıştırırlar. Fakat reaktör yanıcı, patlayıcı gazla doludur. Bomba ve ateşli silahların kullanılması büyük tehlike arz edeceğinden düşmanlar birbirlerini başka yollarla halletmelidir.',
+    'map-9-story': 'Uzun süredir bir vurgunun peşinde koşan Juan\'ın Çetesi, bu kez gözünü Kapalı Çarşı\'ya dikmişti. Kapalıçarşı\'nın esrarengiz yüzünü de kullanarak gizli bir plan yapan Juan büyük vurgun için gün saymaya başlamıştı. Harika plan ile Kapalı Çarşı\'daki tüm dükkanları yağmalayıp kimsenin ruhu duymadan "logar kapağını" patlatıp şehrin altından kaçacaklardı. Ancak diğer tarafta Özel Tim Liderlerinden Ivan, muhbirleri sayesinde, Juan\'ın bu planından haberi olur. Ivan\'ın her zaman söylediği söz yine gerçek olmuştu: "O çete üyeleri her zaman birbirlerini satar..." Gece büyük vurgunu tamamlamak için buluşan Juan ve Çetesi, Kapalıçarşı\'nın Kubbelerine tırmanarak burada ortalığın iyice sakinleşmesini beklerler. Sabaha karşı içeride bulunan zincirli bölgelerden içeri giren Çete amacına çok yakındır... Ancak bu durum Ivan\'ın Özel Timler ile birlikte Kapalı Çarşı\'yı kuşatmasına kadar sürdü... Daha sonra uzun süren çatışmalar başladı...',
+    'map-10-story': 'Kanunsuz işlerle kazandıkları pis malların teslimatı için terkedilmiş bir bölge seçen Çete Üyeleri, Özel Tim tarafından köşeye sıkıştırılmıştır. Çete üyeleri bir yandan uzun süredir topladıkları bu malları kaybetmemek bir yandan da arkada bir yerde gizli bir yol bulmak ve zaman kazanmak için çatışmaya girerler.',
+    'map-11-story': 'Özel Tim, dağlar arasında bulunan Cennet isimli ufak bir kasabada Çete üyelerinin silah temin ettiğine dair duyumlar alır. Dört tarafı dağlarla çevrili bu sakin ve barışçıl kasaba, bu özelliğinden dolayı dış dünyanın ilgisini çekmeyecek bir mekandır. Yapılan araştırmalar sonucu Özel Tim, kasabanın Çete üyelerinin ini olduğunu öğrenir. Çeşitli patlayıcılar başta olmak üzere pek çok silahın saklandığı kasabaya normal yollardan giriş imkansızdır. Akşam saatlerinde tenha bir köşedeki duvarı imha ederek kasabaya sızan Tim\'in amacı Çete silahlarını ele geçirip yok etmektir.',
+    'map-12-story': 'Arka sokaklarda Çetenin hüküm sürdüğü bölgelere rutin baskınlardan birini yapan Özel Tim durumun ciddiyetini farkedememiştir. Çete üyeleri Özel Tim\'i kuracakları C4 bombalarla bozguna uğratmak istemektedir.',
+    'map-13-story': 'Çete Üyelerinin eylemleri giderek daha da büyümeye başlar. Bu yüzden Özel Tim ekipleri saha operasyonlarını genişletir. Çete üyeleri, operasyonlar yüzünden geri adım atmak zorunda kalırlar. Can havliyle Özel Tim ekiplerini eski bir petrol rafinerisinin konuşlandığı bir yerleşim merkezine çeken çete üyeleri, C4 patlayıcı ile rafineyi havaya uçurup tüm SWAT ekiplerinden kurtulmayı planlamaktadırlar. Fakat yılların tecrübeli Özel Tim birlikleri bu tuzağa düşmeyecek kadar zekidir.',
+    'map-14-story': 'Çetelerin eylemleri giderek daha da büyümeye başlar. Bu yüzden Özel tim ekipleri saha operasyonlarını genişletir. Can havliyle Özel tim ekiplerini eski bir petrol rafinerisin konuşlandığı bir yerleşim merkezine çeken gangster çetesi C4 patlayıcı ile rafineyi havaya uçurup tüm Özel tim ekiplerinden kurtulmayı planlamaktadırlar. Fakat yılların tecrübeli Özel tim ekibi bu tuzağa düşmeyecek kadar zekidir.',
+    'map-15-story': 'Özel tim ekipleri büyük bir uyuşturucu ağına ilişkin istihbarat alır bu ağın kökünü kazımak için operasyona başlarlar. Malın saklandığı depoya doğru harekete geçen ekipleri gangster çeteleri karşılar.',
+    'map-16-story': 'Çetelerin en önemli liderlerinden birinin bir dağ köyünde saklandığı istihbaratını alan ekipler köyün çevresini kuşatarak herkesi sorguya almaya başlar. Aramaların sonuna yaklaşılırken çeteler Özel tim ekiplerine karşı saldırıya geçer.',
+    'map-17-story': 'Çetelerin mali işlerini tutan bir elemanın telsiz konuşmalarını dinleyen Özel tim ekipleri elemanı kanalizasyon tünellerinde takip ederler. Fakat iyice derinlere inen ekipler sonu olmayan tünellerde kapana sıkışır. Bakalım ekipler gangsterlerin bu tuzağından canlı çıkabilecekler mi?',
+    'map-18-story': 'Belediye tarafından şehir geri dönüşüm çalışmaları sonucu eski binaları yenilemeye başlanır. İşçilerden birisi gangsterlerin kullandığı eski bir binada yüklü miktarda para bulur. Paralarını işçilerden geri almak için binayı kuşatan gangster çetesinin hemen ardından olay yerine Özel tim ekipleri de teşrif etmişlerdir.',
+    'map-19-story': 'Gangsterler, şehrin bir bölümünün elektriklerinin sağlandığı büyük makinaları imha etmek ve halka korku salmak için harekete geçerler. Bunun istihbaratını alan Özel Tim ekipleri de olaya müdahale etmek için harekete geçerler.',
+    'map-20-story': 'Ekonominin kalbinin attığı plazalar muhitinde çok önemli bir finans firmasının gökdelenini ele geçiren gangster çeteleri, gökdeleni yerle bir ederek ekonomiye darbe indirmek ve yarattıkları kaosla binadan kaçmak istemişlerdir. Fakat SWAT ekipleri yıkımı engelleyerek çeteleri gökdelende sıkıştırmışlardır. Kaçacak yerleri olmayan gangsterler direnişe geçer. Gökdelene tam olarak giriş yapamayan SWAT ekipleri çevreye keskin nişancılar yerleştirerek düşmanı alt etmeye çalışır. Her bir silah sesinde birinin yere yığıldı bu karmaşa ortamında bakalım en son kim hayatta kalacaktır?',
+    'map-21-story': 'Zengin ve Fakir insanların arasında ki fark genişliyorken, insanlar yaşamak için Çete Üyelerine katılıyorlardı. Bu kalabalıklaşma Çete Üyelerinin organizasyon yapmalarını zorlaştırıyordu. Sığınak yerlerinin bazıları hariç çoğu S.W.A.T gözetimi altındaydı. Bu yüzden Çete Üyeleri cesurca özel bir tesis kılığında depoları ve özel mekanları yeniden organize ederek karargahlarına katmaya karar verdiler. Yapılanma planı iyi gidiyor gibi görünüyordu. Yarı zamanlı hükümetin izni ile çalışan bir işçinin gizli silah ve malzemeleri bulup Özel Tim\'e haber vermesiyle her şey değişti. Özel Tim bölgede neler olduğunu araştırmak için bir Silahlı ekip göndermeye karar verir ve Çete Üyeleriyle aralarında büyük bir çatışma çıkacaktır.',
   },
   en: {
     'lang': 'TR',
@@ -143,7 +169,10 @@ const translations = {
     'nav-rank': 'Clan Rankings',
     'nav-match': 'Create Match',
     'nav-news': 'News',
+    'nav-maps': 'Maps',
     'nav-admin': 'Admin',
+    'maps-page-title': 'MAPS',
+    'maps-page-subtitle': 'Legendary maps and their stories in S2 Son Silah',
     'home-title': 'WELCOME TO THE ARENA!',
     'home-subtitle': 'Are you ready for adrenaline-filled battles? Download now and join the action!',
     'download-btn': '🎮 DOWNLOAD GAME',
@@ -180,6 +209,29 @@ const translations = {
     'important-title': 'IMPORTANT',
     'important-text-1': 'AFTER MAKING AN UPDATE, EXPORT THE FILE AND GIVE IT TO LORDASTONG.',
     'important-text-2': 'NEVER FORGET TO SAVE THE FILE, EVEN IF YOU ONLY ADD POINTS!!!!',
+  
+    // Map stories (EN)
+    'map-1-story': 'The special forces learn that gangs are trafficking weapons in an abandoned warehouse and surround it from all sides. Seizing all weapons will ruin the gangsters\' plans. However, the gangs are not unprepared for this operation.',
+    'map-2-story': 'High-profile statesmen and investors gather near a small airfield by a village to discuss turning the area into a tourist hub. Learning about this meeting, gangs position themselves to carry out an assassination. The meeting starts, but both sides have a lot at stake.',
+    'map-3-story': 'In a deserted part of the city stands an abandoned hospital. Armed gang members have seized it for a special mission: to extract a priceless jewel hidden in the body of a deceased gang leader. As special forces surround the hospital and launch a sudden assault, the place turns into a battlefield. The only way out for the gang, who seize the jewel, is to break through the blocked path and escape.',
+    'map-4-story': 'A few gunshots turn a peaceful town into a war zone. Cornered gang members fleeing special forces start setting the town on fire. While special forces aim to neutralize the enemies, the gangs try to shake pursuit and flee the area.',
+    'map-5-story': 'Receiving intel that gang members will meet in a small town, special forces raid late at night. Due to the forest terrain and harsh cold, the gang responds with gunfire instead of fleeing.',
+    'map-6-story': 'To preserve their wealth and power, many gangs dare to engage in illicit arms and drug trafficking. Special forces learn that several gangs are using an old ship to smuggle dangerous weapons. The team\'s mission is to infiltrate the ship and stop them, but the gangs set a trap. In the middle of the ocean, on an old ship, the team is forced into a hopeless firefight.',
+    'map-7-story': 'Special forces receive intel that gang members will meet a nightclub owner. It\'s an opportunity not to be missed, so they surround the club. To avoid harming civilians amid the lights and music, the team must drop firearms and explosives. Under flashing lights and pounding music—who will win?',
+    'map-8-story': 'Listening to the radio chatter of a gang\'s accountant, special forces corner him in an old waste-processing reactor. The reactor is filled with flammable, explosive gas. Since bombs and firearms would be too dangerous, the enemies must eliminate each other by other means.',
+    'map-9-story': 'Juan\'s gang has long chased a big score and now targets the Grand Bazaar. Using its maze-like layout, Juan prepares a secret plan to loot all the shops and then blow a manhole cover to escape through the underground. But Special Forces leader Ivan learns of the plan from informants—“Gang members always sell each other out.” As Juan\'s crew climbs the domes to wait for calm, special forces surround the bazaar. A long firefight follows…',
+    'map-10-story': 'Gang members choose an abandoned area to deliver dirty goods obtained illegally, but special forces corner them. They fight both to avoid losing the goods and to find a hidden escape route to buy time.',
+    'map-11-story': 'Special forces receive intel that gangs are arming themselves in a small town called Paradise, tucked among the mountains. Surrounded by peaks and out of sight, the town is a perfect hideout. After investigation, the team confirms it\'s a gang den packed with explosives and weapons. They breach a remote wall at dusk to infiltrate and destroy the cache.',
+    'map-12-story': 'During a routine raid in backstreets controlled by gangs, special forces underestimate the threat. The gang plans to rout them using planted C4 charges.',
+    'map-13-story': 'Gang activity escalates, so special forces expand field operations. Pressured by the crackdown, gangs lure them to a settlement near an old oil refinery, planning to blow it up with C4 and escape all SWAT teams. But the seasoned special forces won\'t fall for the trap.',
+    'map-14-story': 'Gang operations keep growing, forcing special forces to extend field missions. A gang draws them to a settlement by an old oil refinery, planning to demolish it with C4 and get rid of all special forces. The veteran team is too smart to be trapped.',
+    'map-15-story': 'Special forces gather intel on a large drug network and launch an operation to dismantle it. As they move toward the stash warehouse, gangsters engage them.',
+    'map-16-story': 'With intel that a key gang leader is hiding in a mountain village, special forces surround the area and begin questioning everyone. As the search nears its end, gangs launch an attack.',
+    'map-17-story': 'Tracking a gang accountant through sewer tunnels by monitoring radio chatter, special forces go too deep and get trapped in endless tunnels. Will they make it out alive?',
+    'map-18-story': 'As part of an urban renewal effort, workers start refurbishing old buildings. One finds a stash of cash in a gang hideout. The gang surrounds the building to reclaim their money—soon after, special forces also arrive on scene.',
+    'map-19-story': 'Gangs move to destroy the major machines powering a part of the city to spread fear. Special forces mobilize to stop the attack.',
+    'map-20-story': 'Gangs seize a financial firm\'s skyscraper in the business district, aiming to demolish it and escape amid the chaos. SWAT prevents the demolition and traps them inside. With snipers positioned outside, every shot drops someone—who will survive last?',
+    'map-21-story': 'As the gap between rich and poor widens, more people join gangs to survive, complicating their organization. Most shelters are under S.W.A.T surveillance, so gangs boldly convert depots and venues into a headquarters disguised as a private facility. A part-time government worker discovers hidden weapons and informs special forces—prompting an armed response and a major clash.',
   }
 };
 
@@ -335,14 +387,6 @@ function initializeAuth() {
             render();
         } 
         if (nickname === 'fe' && password === 'fe2121') {
-            isAdmin = true;
-            editMode = true;
-            editModeToggle.checked = true;
-            updateAuthUI();
-            document.getElementById('login-modal').classList.add('hidden');
-            render();
-        } 
-            if (nickname === 'montana' && password === 'montana2121') {
             isAdmin = true;
             editMode = true;
             editModeToggle.checked = true;
